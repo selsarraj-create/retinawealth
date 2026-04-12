@@ -23,7 +23,7 @@ export default function MarketingPage() {
             </h1>
             
             <p className="text-lg md:text-xl text-slate-500 max-w-2xl font-light leading-relaxed">
-              Institutional-grade alpha generating a <strong className="text-emerald-700">353% Annual CAGR</strong> via a verified 52.9% win rate across 32,340 global equities. We process the quantum mathematics in the background, so your broker executes the trades autonomously while you sleep.
+              Institutional-grade alpha generating a <strong className="text-emerald-700">41.7% Annual CAGR</strong> via a verified 52.9% win rate across 32,340 global equities. We process the quantum mathematics in the background, so your broker executes the trades autonomously while you sleep.
             </p>
             
             <div className="flex flex-col sm:flex-row items-center gap-4 pt-4 justify-center md:justify-start">
@@ -146,7 +146,7 @@ export default function MarketingPage() {
              <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-8">Join the inner circle today.</h2>
              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
                  <div>
-                     <div className="text-4xl font-black text-emerald-700">+353%</div>
+                     <div className="text-4xl font-black text-emerald-700">+41.7%</div>
                      <div className="text-sm font-medium text-slate-500 mt-1">Annualised CAGR</div>
                  </div>
                  <div>
