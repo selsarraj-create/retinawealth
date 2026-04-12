@@ -21,17 +21,17 @@ export default function AppShell({ children }: { children: ReactNode }) {
                 </div>
 
                 <nav className="flex-1 px-4 space-y-2">
-                    <Link href="/" className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${pathname === '/' ? 'bg-slate-100 text-slate-900' : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50'}`}>
+                    <Link href="/dashboard" className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${pathname === '/dashboard' ? 'bg-slate-100 text-slate-900' : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50'}`}>
                         <LayoutDashboard className="w-4 h-4" />
                         Live Signals
                     </Link>
-                    <Link href="/performance" className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${pathname === '/performance' ? 'bg-slate-100 text-slate-900' : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50'}`}>
+                    <Link href="/dashboard/performance" className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${pathname === '/dashboard/performance' ? 'bg-slate-100 text-slate-900' : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50'}`}>
                         <Activity className="w-4 h-4" />
                         Portfolio Identity
                     </Link>
-                    <Link href="/settings" className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${pathname === '/settings' ? 'bg-slate-100 text-slate-900' : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50'}`}>
+                    <Link href="/dashboard/settings" className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${pathname === '/dashboard/settings' ? 'bg-slate-100 text-slate-900' : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50'}`}>
                         <Settings className="w-4 h-4" />
-                        Statements
+                        Settings
                     </Link>
                 </nav>
 
@@ -79,17 +79,17 @@ export default function AppShell({ children }: { children: ReactNode }) {
             
             {/* 5. Mobile Tab Bar */}
             <nav className="md:hidden fixed bottom-0 left-0 right-0 h-[72px] bg-white/90 backdrop-blur-xl border-t border-slate-200 z-50 flex items-center justify-around px-6 pb-safe text-slate-500 shrink-0">
-                <Link href="/" className={`flex flex-col items-center justify-center gap-1 transition-colors ${pathname === '/' ? 'text-slate-900' : 'hover:text-slate-700'}`}>
+                <Link href="/dashboard" className={`flex flex-col items-center justify-center gap-1 transition-colors ${pathname === '/dashboard' ? 'text-slate-900' : 'hover:text-slate-700'}`}>
                     <LayoutDashboard className="w-5 h-5" />
                     <span className="text-[10px] font-medium">Signals</span>
                 </Link>
-                <Link href="/performance" className={`flex flex-col items-center justify-center gap-1 transition-colors ${pathname === '/performance' ? 'text-slate-900' : 'hover:text-slate-700'}`}>
+                <Link href="/dashboard/performance" className={`flex flex-col items-center justify-center gap-1 transition-colors ${pathname === '/dashboard/performance' ? 'text-slate-900' : 'hover:text-slate-700'}`}>
                     <Activity className="w-5 h-5" />
                     <span className="text-[10px] font-medium">Portfolio</span>
                 </Link>
-                <Link href="/settings" className={`flex flex-col items-center justify-center gap-1 transition-colors ${pathname === '/settings' ? 'text-slate-900' : 'hover:text-slate-700'}`}>
+                <Link href="/dashboard/settings" className={`flex flex-col items-center justify-center gap-1 transition-colors ${pathname === '/dashboard/settings' ? 'text-slate-900' : 'hover:text-slate-700'}`}>
                     <Settings className="w-5 h-5" />
-                    <span className="text-[10px] font-medium">Statements</span>
+                    <span className="text-[10px] font-medium">Settings</span>
                 </Link>
             </nav>
         </div>
