@@ -16,7 +16,7 @@ export default function MarketingLayout({
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
                  </div>
              </div>
-             <span className="font-bold text-xl tracking-tight text-slate-900">RETINA. Capital</span>
+             <span className="font-bold text-xl tracking-tight text-slate-900">RETINA. Wealth</span>
           </div>
 
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-500">
@@ -43,7 +43,7 @@ export default function MarketingLayout({
       <footer className="border-t border-slate-200 bg-slate-50 py-12 z-10 relative">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
             <div className="flex items-center gap-2 mb-4 md:mb-0">
-                <span className="font-bold tracking-tight text-slate-900">RETINA. Capital</span>
+                <span className="font-bold tracking-tight text-slate-900">RETINA. Wealth</span>
                 <span className="text-slate-500 text-sm">© 2026</span>
             </div>
             <div className="text-sm text-slate-500 max-w-xl text-center md:text-right">

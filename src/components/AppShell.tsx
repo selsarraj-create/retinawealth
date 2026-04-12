@@ -16,7 +16,7 @@ export default function AppShell({ children }: { children: ReactNode }) {
                     <div className="w-8 h-8 rounded-lg bg-slate-900 flex items-center justify-center">
                         <Activity className="w-5 h-5 text-white" />
                     </div>
-                    <span className="font-bold text-xl tracking-tight text-slate-900">RETINA<span className="text-slate-500 font-light">. Capital</span></span>
+                    <span className="font-bold text-xl tracking-tight text-slate-900">RETINA<span className="text-slate-500 font-light">. Wealth</span></span>
                 </div>
 
                 <nav className="flex-1 px-4 space-y-2">
@@ -54,11 +54,10 @@ export default function AppShell({ children }: { children: ReactNode }) {
                 {/* 3. Top Bar */}
                 <header className="rd-topbar h-16 border-b border-slate-200 bg-white flex justify-between items-center px-4 md:px-8 z-10 shrink-0">
                     <div className="flex items-center gap-4">
-                        <div className="flex items-center justify-center px-2.5 py-1 rounded-md bg-slate-100 border border-slate-200 text-slate-600 text-[10px] sm:text-xs font-bold tracking-widest leading-none">
-                            <span className="hidden sm:inline">INSTITUTIONAL FEED</span>
-                            <span className="inline sm:hidden">FEED</span>
-                        </div>
-                        <span className="text-[10px] sm:text-xs text-slate-500 font-serif hidden sm:inline-block">Capital Management</span>
+                        <span className="font-bold text-slate-900 tracking-tight flex items-center gap-2">
+                           RETINA
+                           <span className="text-[10px] sm:text-xs text-slate-500 font-serif hidden sm:inline-block">Wealth Management</span>
+                        </span>
                     </div>
                     <div className="flex items-center gap-4">
                         <div className="flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-xs font-medium text-emerald-700 bg-emerald-50 px-2 sm:px-3 py-1 sm:py-1.5 rounded-full border border-emerald-200">

@@ -38,7 +38,7 @@ export default function LoginPage() {
                 <div className="w-12 h-12 rounded-xl bg-slate-50 border border-slate-200 flex flex-col items-center justify-center mb-4">
                     <Activity className="w-6 h-6 text-slate-700" />
                 </div>
-                <h1 className="text-3xl font-bold text-slate-900 tracking-tight">RETINA<span className="text-slate-500 font-light">. Capital</span></h1>
+                <h1 className="text-3xl font-bold text-slate-900 tracking-tight">RETINA<span className="text-slate-500 font-light">. Wealth</span></h1>
                 <p className="text-slate-500 text-sm mt-2 text-center">Automated Thermodynamic Execution</p>
             </div>
 
