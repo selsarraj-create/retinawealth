@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import '../globals.css';
+import { RetinaLogo } from '@/components/Logo';
 
 export default function MarketingLayout({
   children,
@@ -11,10 +13,8 @@ export default function MarketingLayout({
       <header className="absolute top-0 w-full z-50 border-b border-slate-200 bg-white/80 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <div className="flex items-center gap-3">
-             <div className="w-8 h-8 rounded-lg bg-emerald-50 border border-emerald-200 flex items-center justify-center">
-                 <div className="w-4 h-4 text-emerald-700">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
-                 </div>
+             <div className="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-slate-900">
+                <RetinaLogo className="w-5 h-5" />
              </div>
              <span className="font-bold text-xl tracking-tight text-slate-900">RETINA. Wealth</span>
           </div>

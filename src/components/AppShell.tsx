@@ -4,6 +4,7 @@ import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { ReactNode } from 'react';
 import { Activity, LayoutDashboard, Settings, User } from 'lucide-react';
+import { RetinaLogo } from '@/components/Logo';
 
 export default function AppShell({ children }: { children: ReactNode }) {
     const pathname = usePathname();
@@ -14,7 +15,7 @@ export default function AppShell({ children }: { children: ReactNode }) {
             <aside className="rd-sidebar hidden md:flex w-64 border-r border-slate-200 flex-col pt-6 z-20 bg-white">
                 <div className="px-6 mb-8 flex items-center gap-3">
                     <div className="w-8 h-8 rounded-lg bg-slate-900 flex items-center justify-center">
-                        <Activity className="w-5 h-5 text-white" />
+                        <RetinaLogo className="w-5 h-5 text-white" />
                     </div>
                     <span className="font-bold text-xl tracking-tight text-slate-900">RETINA<span className="text-slate-500 font-light">. Wealth</span></span>
                 </div>

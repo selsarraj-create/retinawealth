@@ -1,9 +1,10 @@
 'use client';
 
-import { Activity, ArrowRight, Lock } from 'lucide-react';
+import { Lock, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
 import { supabase } from '@/lib/supabase';
+import { RetinaLogo } from '@/components/Logo';
 
 export default function LoginPage() {
     const [email, setEmail] = useState('');
@@ -35,8 +36,8 @@ export default function LoginPage() {
     return (
         <div className="w-full max-w-md animate-in fade-in slide-in-from-bottom-8 duration-700">
             <div className="flex flex-col items-center justify-center mb-8">
-                <div className="w-12 h-12 rounded-xl bg-slate-50 border border-slate-200 flex flex-col items-center justify-center mb-4">
-                    <Activity className="w-6 h-6 text-slate-700" />
+                <div className="w-12 h-12 rounded-xl bg-slate-100 border border-slate-200 flex flex-col items-center justify-center mb-4 text-slate-900">
+                    <RetinaLogo className="w-6 h-6" />
                 </div>
                 <h1 className="text-3xl font-bold text-slate-900 tracking-tight">RETINA<span className="text-slate-500 font-light">. Wealth</span></h1>
                 <p className="text-slate-500 text-sm mt-2 text-center">Automated Thermodynamic Execution</p>

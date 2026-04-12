@@ -1,9 +1,10 @@
 'use client';
 
-import { Activity, ArrowRight, ShieldCheck, Zap } from 'lucide-react';
+import { ArrowRight, ShieldCheck, Zap } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
 import { supabase } from '@/lib/supabase';
+import { RetinaLogo } from '@/components/Logo';
 
 export default function SignupPage() {
     const [email, setEmail] = useState('');
@@ -45,8 +46,8 @@ export default function SignupPage() {
             {/* Left Column: Marketing Info */}
             <div className="flex-1 space-y-8 hidden md:block">
                 <div>
-                    <div className="w-12 h-12 rounded-xl bg-slate-50 border border-slate-200 flex flex-col items-center justify-center mb-6">
-                        <Activity className="w-6 h-6 text-slate-700" />
+                    <div className="w-12 h-12 rounded-xl bg-slate-100 border border-slate-200 flex flex-col items-center justify-center mb-6 text-slate-900">
+                        <RetinaLogo className="w-6 h-6" />
                     </div>
                     <h1 className="text-4xl font-black text-slate-900 tracking-tight mb-4">
                         Automate the <br/><span className="text-emerald-700">Thermodynamic Edge.</span>
@@ -82,7 +83,7 @@ export default function SignupPage() {
             <div className="w-full max-w-md shrink-0">
                 <div className="bg-white border border-slate-200 rounded-3xl p-8 shadow-xl relative overflow-hidden">
                     <div className="mb-8 md:hidden flex flex-col items-center">
-                        <Activity className="w-8 h-8 text-slate-700 mb-2" />
+                        <RetinaLogo className="w-8 h-8 text-slate-900 mb-2" />
                         <h2 className="text-2xl font-bold text-slate-900">Create Account</h2>
                     </div>
 
