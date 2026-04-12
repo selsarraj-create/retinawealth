@@ -135,7 +135,7 @@ export default function SignupPage() {
                             disabled={loading}
                             className="w-full mt-2 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold transition-all shadow-sm flex justify-center items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed group"
                         >
-                            {loading ? 'DEPLOYING PROFILE...' : 'INITIALIZE API ACCESS'}
+                            {loading ? 'DEPLOYING PROFILE...' : 'START 30-DAY FREE TRIAL'}
                             {!loading && <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />}
                         </button>
                         
