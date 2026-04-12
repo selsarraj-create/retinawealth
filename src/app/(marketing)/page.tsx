@@ -19,7 +19,8 @@ export default function MarketingPage() {
             </div>
             
             <h1 className="text-5xl md:text-7xl font-extrabold text-slate-900 tracking-tight leading-[1.1]">
-              The hedge fund edge, <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-600 to-slate-900">democratised.</span>
+              The hedge fund&nbsp;edge,<br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-600 to-slate-900">democratised.</span>
             </h1>
             
             <p className="text-lg md:text-xl text-slate-500 max-w-2xl font-light leading-relaxed">
