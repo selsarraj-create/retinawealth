@@ -27,11 +27,11 @@ export default function MarketingPage() {
             </p>
             
             <div className="flex flex-col sm:flex-row items-center gap-4 pt-4 justify-center md:justify-start">
-              <Link href="/dashboard" className="w-full sm:w-auto px-8 py-4 rounded-full bg-slate-900 hover:bg-slate-800 text-white font-bold text-lg transition-all shadow-lg flex items-center justify-center gap-2">
-                Connect Broker for $99/mo <ArrowRight className="w-5 h-5" />
+              <Link href="/signup" className="w-full sm:w-auto px-8 py-4 rounded-full bg-slate-900 hover:bg-slate-800 text-white font-bold text-lg transition-all shadow-lg flex items-center justify-center gap-2">
+                Start 30-Day Free Trial <ArrowRight className="w-5 h-5" />
               </Link>
               <div className="text-sm text-slate-500 font-medium">
-                Cancel anytime.
+                $99/mo afterwards. Cancel anytime.
               </div>
             </div>
           </div>
@@ -168,10 +168,10 @@ export default function MarketingPage() {
                  <p className="text-slate-500 mb-6 text-sm">Full access to automated portfolio execution. From the S&P 500 to global equities, the engine handles the trading entirely for you.</p>
                  <div className="text-5xl font-black text-slate-900 mb-8">$99<span className="text-xl text-slate-500 font-medium">/mo</span></div>
                  
-                 <Link href="/dashboard" className="block w-full py-4 text-center rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-lg transition-colors shadow-sm">
-                     Connect Your Broker
+                 <Link href="/signup" className="block w-full py-4 text-center rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-lg transition-colors shadow-sm">
+                     Start 30-Day Free Trial
                  </Link>
-                 <p className="text-xs text-slate-500 mt-4">Zero technical knowledge required. Cancel anytime.</p>
+                 <p className="text-xs text-slate-500 mt-4">Zero technical knowledge required. $99/mo after. Cancel anytime.</p>
              </div>
          </div>
       </section>
