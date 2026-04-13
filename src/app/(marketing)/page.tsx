@@ -37,10 +37,10 @@ export default function MarketingPage() {
             
             <div className="flex flex-col sm:flex-row items-center gap-4 pt-2 justify-center md:justify-start">
               <Link href="/signup" className="w-full sm:w-auto px-8 py-4 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-lg transition-all shadow-lg shadow-emerald-600/25 flex items-center justify-center gap-2 hover:shadow-emerald-600/40 hover:scale-[1.02] active:scale-[0.98]">
-                Start 30-Day Free Trial <TrendingUp className="w-5 h-5" />
+                Get Early Access <TrendingUp className="w-5 h-5" />
               </Link>
               <div className="text-sm text-slate-500 font-medium">
-                $99/mo afterwards. Cancel anytime.
+                Free paper trading with live signals. No card required.
               </div>
             </div>
           </div>
@@ -219,9 +219,9 @@ export default function MarketingPage() {
                  </div>
 
                  <Link href="/signup" className="block w-full py-4 text-center rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-lg transition-all shadow-lg shadow-emerald-600/25 hover:shadow-emerald-600/40">
-                     Start 30-Day Free Trial
+                     Get Early Access
                  </Link>
-                 <p className="text-xs text-slate-500 mt-4">Zero technical knowledge required. $99/mo after. Cancel anytime.</p>
+                 <p className="text-xs text-slate-500 mt-4">Free paper trading with live signals. $99/mo when live trading launches.</p>
              </div>
 
              {/* Trust badges */}
