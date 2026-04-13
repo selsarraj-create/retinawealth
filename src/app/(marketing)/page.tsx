@@ -204,8 +204,20 @@ export default function MarketingPage() {
              <div className="bg-white border border-slate-200 p-8 rounded-2xl max-w-lg mx-auto shadow-sm">
                  <h3 className="text-2xl font-bold text-slate-900 mb-2">Standard Access</h3>
                  <p className="text-slate-500 mb-6 text-sm">Full access to automated portfolio execution. From the S&P 500 to global equities, the engine handles the trading entirely for you.</p>
-                 <div className="text-5xl font-black text-slate-900 mb-8">$99<span className="text-xl text-slate-500 font-medium">/mo</span></div>
+                 <div className="text-5xl font-black text-slate-900 mb-6">$99<span className="text-xl text-slate-500 font-medium">/mo</span></div>
                  
+                 {/* Investment limits */}
+                 <div className="flex justify-center gap-4 mb-6">
+                   <div className="px-4 py-2 rounded-xl bg-emerald-50 border border-emerald-100">
+                     <div className="text-xs font-bold text-emerald-700">No Minimum</div>
+                     <div className="text-[11px] text-emerald-600/60">Start with any amount</div>
+                   </div>
+                   <div className="px-4 py-2 rounded-xl bg-slate-50 border border-slate-200">
+                     <div className="text-xs font-bold text-slate-700">$500K Maximum</div>
+                     <div className="text-[11px] text-slate-400">Built for retail, not Wall St</div>
+                   </div>
+                 </div>
+
                  <Link href="/signup" className="block w-full py-4 text-center rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-lg transition-all shadow-lg shadow-emerald-600/25 hover:shadow-emerald-600/40">
                      Start 30-Day Free Trial
                  </Link>
