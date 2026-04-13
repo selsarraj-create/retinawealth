@@ -13,6 +13,10 @@ const faqs = [
     answer: "Absolutely not. We engineered this system specifically so that everyday retail investors can access institutional-grade mathematics. You simply connect your broker, set your risk limit, and the engine handles the complex physics."
   },
   {
+    question: "Is there a minimum or maximum investment?",
+    answer: "There is no minimum investment — you can start with any amount in your brokerage account. We do enforce a $500,000 maximum per account. This is a deliberate choice: RETINA was built for everyday retail investors, not Wall Street. Capping account sizes protects our signal quality and ensures the edge remains accessible to the people who need it most."
+  },
+  {
     question: "How does the system protect my capital during a crash?",
     answer: "The core physics engine continuously tracks covariance anomalies across global equities. If it detects severe structural instability pointing to a market crash, the engine automatically halts high-risk trades or rotates into safe-haven assets to shield your capital."
   },
