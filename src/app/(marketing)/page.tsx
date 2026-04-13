@@ -6,7 +6,7 @@ const socialProof = [
   "Blind OOS Validated",
   "Model Frozen Pre-2025",
   "32,000+ Verified Trades",
-  "Patent Pending Physics Engine",
+  "Proprietary Physics Engine",
 ];
 
 export default function MarketingPage() {
