@@ -24,7 +24,7 @@ export default function MarketingPage() {
             </h1>
             
             <p className="text-lg md:text-xl text-slate-500 max-w-2xl font-light leading-relaxed">
-              Institutional-grade alpha generating a <strong className="text-emerald-700">41.7% Annual CAGR</strong> via a verified 52.9% win rate across 32,340 global equities. We process the quantum mathematics in the background, so your broker executes the trades autonomously while you sleep.
+              Institutional-grade alpha generating a <strong className="text-emerald-700">41.7% Annual CAGR</strong> via a verified 52.9% win rate on stocks like Apple, Microsoft, and Google. We process the quantum mathematics in the background, so your broker executes the trades autonomously while you sleep.
             </p>
             
             <div className="flex flex-col sm:flex-row items-center gap-4 pt-4 justify-center md:justify-start">
