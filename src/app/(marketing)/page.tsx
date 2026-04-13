@@ -49,10 +49,10 @@ export default function MarketingPage() {
                 <div className="p-6 space-y-4">
                     {/* Mocked signals */}
                     {[
-                        { t: 'LUNR', d: 'LONG', p: '+40.5%', conf: '0.74', color: 'emerald' },
-                        { t: 'SOUN', d: 'LONG', p: '+54.2%', conf: '0.81', color: 'emerald' },
-                        { t: 'AAPL', d: 'LONG', p: '+1.2%', conf: '0.52', color: 'blue' },
-                        { t: 'JPM', d: 'SHORT', p: '+0.8%', conf: '0.51', color: 'blue' },
+                        { t: 'AAPL', d: 'LONG', p: '+3.2%', conf: '0.68', color: 'emerald' },
+                        { t: 'MSFT', d: 'LONG', p: '+2.7%', conf: '0.65', color: 'emerald' },
+                        { t: 'GOOGL', d: 'LONG', p: '+1.9%', conf: '0.59', color: 'blue' },
+                        { t: 'AMZN', d: 'SHORT', p: '+1.4%', conf: '0.57', color: 'blue' },
                     ].map((s, i) => (
                         <div key={i} className="flex justify-between items-center p-3 rounded-lg border border-slate-100 bg-slate-50">
                             <div className="flex items-center gap-3">
@@ -83,13 +83,13 @@ export default function MarketingPage() {
             {/* Repeat exact same block twice for seamless scroll loop */}
             {[1, 2].map((group) => (
                 <div key={group} className="flex items-center space-x-8 px-4">
-                    <span className="text-emerald-700 font-mono font-bold">LUNR LONG +40.5%</span><span className="text-slate-300">•</span>
-                    <span className="text-emerald-700 font-mono font-bold">SOUN LONG +54.2%</span><span className="text-slate-300">•</span>
-                    <span className="text-slate-600 font-mono">AAPL LONG +1.2%</span><span className="text-slate-300">•</span>
-                    <span className="text-slate-600 font-mono">MSFT LONG +0.6%</span><span className="text-slate-300">•</span>
-                    <span className="text-rose-600 font-mono">NVDA SHORT -0.3%</span><span className="text-slate-300">•</span>
-                    <span className="text-slate-600 font-mono">JPM SHORT +0.8%</span><span className="text-slate-300">•</span>
-                    <span className="text-emerald-700 font-mono font-bold">BBAI LONG +31.0%</span><span className="text-slate-300">•</span>
+                    <span className="text-emerald-700 font-mono font-bold">AAPL LONG +3.2%</span><span className="text-slate-300">•</span>
+                    <span className="text-emerald-700 font-mono font-bold">MSFT LONG +2.7%</span><span className="text-slate-300">•</span>
+                    <span className="text-slate-600 font-mono">GOOGL LONG +1.9%</span><span className="text-slate-300">•</span>
+                    <span className="text-slate-600 font-mono">NVDA LONG +2.1%</span><span className="text-slate-300">•</span>
+                    <span className="text-slate-600 font-mono">AMZN SHORT +1.4%</span><span className="text-slate-300">•</span>
+                    <span className="text-slate-600 font-mono">JPM LONG +1.8%</span><span className="text-slate-300">•</span>
+                    <span className="text-emerald-700 font-mono font-bold">META LONG +2.5%</span><span className="text-slate-300">•</span>
                 </div>
             ))}
          </div>
