@@ -39,9 +39,9 @@ export default function GrowthCalculator() {
   const maxVal = chartData[chartData.length - 1].retina;
 
   return (
-    <section className="py-24 px-6 bg-white border-t border-slate-200">
+    <section className="py-16 px-6 bg-white border-t border-slate-200">
       <div className="max-w-5xl mx-auto">
-        <div className="text-center space-y-4 mb-12">
+        <div className="text-center space-y-4 mb-8">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-700 text-xs font-bold font-mono tracking-wider">
             GROWTH CALCULATOR
           </div>
@@ -55,7 +55,7 @@ export default function GrowthCalculator() {
 
         <div className="bg-gradient-to-b from-slate-50 to-white border border-slate-200 rounded-3xl p-6 md:p-10 shadow-lg">
           {/* Controls */}
-          <div className="grid md:grid-cols-2 gap-8 mb-10">
+          <div className="grid md:grid-cols-2 gap-6 mb-6">
             {/* Deposit selector */}
             <div>
               <label className="block text-sm font-bold text-slate-700 mb-3">
@@ -103,7 +103,7 @@ export default function GrowthCalculator() {
 
           {/* Chart */}
           <div className="mb-8">
-            <div className="flex items-end gap-1 md:gap-2 h-48 md:h-64">
+            <div className="flex items-end gap-2 md:gap-4 h-40 md:h-48">
               {chartData.map((d, i) => (
                 <div key={d.year} className="flex-1 flex flex-col items-center gap-1">
                   <div className="w-full flex gap-0.5 items-end" style={{ height: '100%' }}>
@@ -113,8 +113,8 @@ export default function GrowthCalculator() {
                         {i === chartData.length - 1 ? formatCurrency(d.retina) : ''}
                       </div>
                       <div
-                        className="w-full bg-gradient-to-t from-emerald-600 to-emerald-400 rounded-t-md transition-all duration-500 min-h-[4px]"
-                        style={{ height: `${(d.retina / maxVal) * 100}%` }}
+                        className="w-full bg-gradient-to-t from-emerald-600 to-emerald-400 rounded-t-lg transition-all duration-500"
+                        style={{ height: `${Math.max((d.retina / maxVal) * 100, 8)}%` }}
                       />
                     </div>
                     {/* S&P bar */}
@@ -123,8 +123,8 @@ export default function GrowthCalculator() {
                         {i === chartData.length - 1 ? formatCurrency(d.sp500) : ''}
                       </div>
                       <div
-                        className="w-full bg-slate-200 rounded-t-md transition-all duration-500 min-h-[4px]"
-                        style={{ height: `${(d.sp500 / maxVal) * 100}%` }}
+                        className="w-full bg-slate-200 rounded-t-lg transition-all duration-500"
+                        style={{ height: `${Math.max((d.sp500 / maxVal) * 100, 8)}%` }}
                       />
                     </div>
                   </div>
