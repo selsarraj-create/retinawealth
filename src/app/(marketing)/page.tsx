@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ShieldCheck, Zap, TrendingUp, CheckCircle, Lock, BarChart3 } from 'lucide-react';
 import FAQ from '@/components/FAQ';
+import GrowthCalculator from '@/components/GrowthCalculator';
 
 const socialProof = [
   "Blind OOS Validated",
@@ -169,6 +170,9 @@ export default function MarketingPage() {
         </div>
         <FAQ />
       </section>
+
+      {/* 4.5 GROWTH CALCULATOR */}
+      <GrowthCalculator />
 
       {/* 5. PERFORMANCE & CTA — visual weight on stats */}
       <section id="pricing" className="py-24 px-6 bg-white border-t border-slate-200">
