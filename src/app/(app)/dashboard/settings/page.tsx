@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { supabase } from '@/lib/supabase';
-import { User, CreditCard, Key, Shield, ArrowRight, Webhook, CheckCircle2, XCircle, Loader2 } from 'lucide-react';
+import { User, CreditCard, Key, Shield, ArrowRight, Webhook, CheckCircle2, XCircle, Loader2, DollarSign, Percent, Scale } from 'lucide-react';
 
 export default function SettingsPage() {
     const [loading, setLoading] = useState(true);
@@ -14,6 +14,11 @@ export default function SettingsPage() {
     const [webhookUrl, setWebhookUrl] = useState('');
     const [webhookStatus, setWebhookStatus] = useState<'idle' | 'testing' | 'success' | 'error'>('idle');
     const [webhookSaved, setWebhookSaved] = useState(false);
+    
+    // Portfolio config
+    const [portfolioSize, setPortfolioSize] = useState('10000');
+    const [maxPositionPct, setMaxPositionPct] = useState('10');
+    const [sizingMethod, setSizingMethod] = useState<'equal' | 'confidence'>('equal');
     
     // Status metrics
     const [tier, setTier] = useState('FREE');
@@ -35,6 +40,9 @@ export default function SettingsPage() {
                     setLastName(data.last_name || '');
                     setPhone(data.phone_number || '');
                     setWebhookUrl(data.webhook_url || '');
+                    setPortfolioSize(data.portfolio_size?.toString() || '10000');
+                    setMaxPositionPct(data.max_position_pct?.toString() || '10');
+                    setSizingMethod(data.sizing_method || 'equal');
                     setTier(data.subscription_tier || 'FREE');
                     setBrokerConnected(data.broker_connected || false);
                 }
@@ -53,7 +61,10 @@ export default function SettingsPage() {
                 first_name: firstName,
                 last_name: lastName,
                 phone_number: phone,
-                webhook_url: webhookUrl || null
+                webhook_url: webhookUrl || null,
+                portfolio_size: parseFloat(portfolioSize) || 10000,
+                max_position_pct: parseFloat(maxPositionPct) || 10,
+                sizing_method: sizingMethod
             }).eq('id', user.id);
             
             if (!error) {
@@ -144,6 +155,107 @@ export default function SettingsPage() {
                                     {saving ? 'UPDATING...' : 'SAVE PROFILE'}
                                 </button>
                             </form>
+                        </div>
+
+                        {/* Portfolio Allocation */}
+                        <div className="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm">
+                            <div className="flex items-center gap-3 mb-2">
+                                <div className="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center border border-emerald-100">
+                                    <Scale className="w-5 h-5 text-emerald-700" />
+                                </div>
+                                <div>
+                                    <h3 className="font-bold text-slate-900">Portfolio Allocation</h3>
+                                    <p className="text-xs text-slate-500">Automated position sizing</p>
+                                </div>
+                            </div>
+                            
+                            <div className="mt-1 mb-4 px-3 py-2 rounded-lg bg-amber-50 border border-amber-200">
+                                <p className="text-[11px] text-amber-800 font-medium leading-relaxed">
+                                    ⚠️ RETINA's edge requires consistent sizing across all trades. Manual overrides will break the law of large numbers and destroy the statistical edge.
+                                </p>
+                            </div>
+
+                            <div className="space-y-4">
+                                <div className="space-y-1.5">
+                                    <label className="text-slate-500 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5">
+                                        <DollarSign className="w-3.5 h-3.5" />
+                                        Total Capital Allocated
+                                    </label>
+                                    <div className="relative">
+                                        <span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm font-bold">$</span>
+                                        <input 
+                                            type="number" 
+                                            value={portfolioSize}
+                                            onChange={e => setPortfolioSize(e.target.value)}
+                                            min="1000"
+                                            step="1000"
+                                            className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-8 pr-4 py-3 text-slate-900 font-bold text-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent outline-none transition-all"
+                                        />
+                                    </div>
+                                </div>
+
+                                <div className="space-y-1.5">
+                                    <label className="text-slate-500 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5">
+                                        <Percent className="w-3.5 h-3.5" />
+                                        Max Per Position
+                                    </label>
+                                    <div className="relative">
+                                        <input 
+                                            type="number" 
+                                            value={maxPositionPct}
+                                            onChange={e => setMaxPositionPct(e.target.value)}
+                                            min="1"
+                                            max="25"
+                                            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 pr-8 text-slate-900 font-bold focus:ring-2 focus:ring-emerald-500 focus:border-transparent outline-none transition-all"
+                                        />
+                                        <span className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm font-bold">%</span>
+                                    </div>
+                                </div>
+
+                                <div className="space-y-1.5">
+                                    <label className="text-slate-500 text-xs font-bold uppercase tracking-wider">Sizing Method</label>
+                                    <div className="grid grid-cols-2 gap-2">
+                                        <button 
+                                            type="button"
+                                            onClick={() => setSizingMethod('equal')}
+                                            className={`py-2.5 rounded-xl text-xs font-bold transition-all border ${
+                                                sizingMethod === 'equal' 
+                                                    ? 'bg-slate-900 text-white border-slate-900' 
+                                                    : 'bg-slate-50 text-slate-500 border-slate-200 hover:bg-slate-100'
+                                            }`}
+                                        >
+                                            EQUAL WEIGHT
+                                        </button>
+                                        <button 
+                                            type="button"
+                                            onClick={() => setSizingMethod('confidence')}
+                                            className={`py-2.5 rounded-xl text-xs font-bold transition-all border ${
+                                                sizingMethod === 'confidence' 
+                                                    ? 'bg-slate-900 text-white border-slate-900' 
+                                                    : 'bg-slate-50 text-slate-500 border-slate-200 hover:bg-slate-100'
+                                            }`}
+                                        >
+                                            CONFIDENCE
+                                        </button>
+                                    </div>
+                                    <p className="text-[11px] text-slate-400 leading-relaxed">
+                                        {sizingMethod === 'equal' 
+                                            ? 'Capital divided equally across all active signals. Recommended for maximum statistical consistency.'
+                                            : 'Higher-confidence signals receive proportionally larger allocation. Slightly higher variance.'}
+                                    </p>
+                                </div>
+
+                                {/* Live preview */}
+                                <div className="p-3 rounded-xl bg-slate-50 border border-slate-200">
+                                    <div className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Example: 8 signals today</div>
+                                    <div className="flex items-baseline gap-1">
+                                        <span className="text-2xl font-black text-slate-900">
+                                            ${(Math.min(parseFloat(portfolioSize) || 10000, (parseFloat(portfolioSize) || 10000) * (parseFloat(maxPositionPct) || 10) / 100) / 8).toLocaleString(undefined, { maximumFractionDigits: 0 })}
+                                        </span>
+                                        <span className="text-xs text-slate-500">per position</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
