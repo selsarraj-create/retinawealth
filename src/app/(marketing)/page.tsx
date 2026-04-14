@@ -131,9 +131,9 @@ export default function MarketingPage() {
                 <div className="w-14 h-14 rounded-2xl bg-slate-900 flex items-center justify-center mb-6 group-hover:bg-emerald-600 transition-colors duration-300">
                   <Zap className="w-7 h-7 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">Thermodynamic Volume</h3>
+                <h3 className="text-xl font-bold text-slate-900 mb-3">Market Physics</h3>
                 <p className="text-slate-500 leading-relaxed text-sm">
-                    Behind the scenes, the engine processes 204 continuous market features derived from liquidity and volatility physics. You simply connect your broker and let the engine execute the mathematics autonomously.
+                    Behind the scenes, the engine compresses 1,060 market signals into 85 physics-grade features derived from liquidity and volatility dynamics. You simply connect your broker and let the engine execute the mathematics autonomously.
                 </p>
             </div>
             <div className="group p-8 rounded-2xl bg-gradient-to-b from-white to-slate-50 border border-slate-200 hover:border-emerald-300 hover:shadow-lg hover:shadow-emerald-500/5 transition-all duration-300">
