@@ -180,7 +180,7 @@ export default function MarketingPage() {
              {/* Subtle gradient accent */}
              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-1 bg-gradient-to-r from-transparent via-emerald-500 to-transparent opacity-60"></div>
              
-             <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-10">Your edge starts here.</h2>
+             <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-10">Bringing Wall St to Retail.</h2>
              
              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
                  <div className="p-4 rounded-2xl bg-emerald-50 border border-emerald-100">
