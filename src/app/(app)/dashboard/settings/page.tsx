@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { supabase } from '@/lib/supabase';
-import { User, CreditCard, Key, Shield, ArrowRight } from 'lucide-react';
+import { User, CreditCard, Key, Shield, ArrowRight, Webhook, CheckCircle2, XCircle, Loader2 } from 'lucide-react';
 
 export default function SettingsPage() {
     const [loading, setLoading] = useState(true);
@@ -11,6 +11,9 @@ export default function SettingsPage() {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [phone, setPhone] = useState('');
+    const [webhookUrl, setWebhookUrl] = useState('');
+    const [webhookStatus, setWebhookStatus] = useState<'idle' | 'testing' | 'success' | 'error'>('idle');
+    const [webhookSaved, setWebhookSaved] = useState(false);
     
     // Status metrics
     const [tier, setTier] = useState('FREE');
@@ -31,6 +34,7 @@ export default function SettingsPage() {
                     setFirstName(data.first_name || '');
                     setLastName(data.last_name || '');
                     setPhone(data.phone_number || '');
+                    setWebhookUrl(data.webhook_url || '');
                     setTier(data.subscription_tier || 'FREE');
                     setBrokerConnected(data.broker_connected || false);
                 }
@@ -48,7 +52,8 @@ export default function SettingsPage() {
             const { error } = await supabase.from('profiles').update({
                 first_name: firstName,
                 last_name: lastName,
-                phone_number: phone
+                phone_number: phone,
+                webhook_url: webhookUrl || null
             }).eq('id', user.id);
             
             if (!error) {
@@ -163,6 +168,97 @@ export default function SettingsPage() {
                             </button>
                         </div>
 
+                        {/* Webhook Integration */}
+                        <div className="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm">
+                            <div className="flex items-center gap-3 mb-4">
+                                <div className="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center border border-indigo-100">
+                                    <Webhook className="w-5 h-5 text-indigo-700" />
+                                </div>
+                                <div>
+                                    <h3 className="font-bold text-slate-900">Signal Webhook</h3>
+                                    <p className="text-xs text-slate-500">TradePost / Custom Endpoint</p>
+                                </div>
+                            </div>
+                            
+                            <p className="text-xs text-slate-500 mb-4 leading-relaxed">
+                                Paste your webhook URL below. RETINA will fire signals directly to your TradePost or custom endpoint after each daily execution cycle.
+                            </p>
+
+                            <div className="space-y-3">
+                                <div className="relative">
+                                    <input 
+                                        type="url" 
+                                        value={webhookUrl}
+                                        onChange={e => { setWebhookUrl(e.target.value); setWebhookSaved(false); }}
+                                        className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 pr-10 text-slate-900 text-sm font-mono focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all placeholder:text-slate-400"
+                                        placeholder="https://tradepost.io/wh/usr_..."
+                                    />
+                                    {webhookUrl && (
+                                        <div className="absolute right-3 top-1/2 -translate-y-1/2">
+                                            {webhookStatus === 'success' && <CheckCircle2 className="w-4 h-4 text-emerald-500" />}
+                                            {webhookStatus === 'error' && <XCircle className="w-4 h-4 text-rose-500" />}
+                                            {webhookStatus === 'testing' && <Loader2 className="w-4 h-4 text-indigo-500 animate-spin" />}
+                                        </div>
+                                    )}
+                                </div>
+                                
+                                <div className="flex gap-2">
+                                    <button
+                                        onClick={async () => {
+                                            if (!webhookUrl) return;
+                                            setWebhookStatus('testing');
+                                            try {
+                                                const res = await fetch(webhookUrl, {
+                                                    method: 'POST',
+                                                    headers: { 'Content-Type': 'application/json' },
+                                                    body: JSON.stringify({
+                                                        test: true,
+                                                        source: 'retina_wealth',
+                                                        ticker: 'TEST',
+                                                        action: 'buy',
+                                                        confidence: 1.0,
+                                                        timestamp: new Date().toISOString()
+                                                    })
+                                                });
+                                                setWebhookStatus(res.ok ? 'success' : 'error');
+                                            } catch {
+                                                setWebhookStatus('error');
+                                            }
+                                        }}
+                                        disabled={!webhookUrl || webhookStatus === 'testing'}
+                                        className="flex-1 py-2 rounded-xl border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-bold transition-all disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-1.5"
+                                    >
+                                        {webhookStatus === 'testing' ? 'TESTING...' : 'SEND TEST SIGNAL'}
+                                    </button>
+                                    <button
+                                        onClick={async () => {
+                                            const { data: { user } } = await supabase.auth.getUser();
+                                            if (user) {
+                                                await supabase.from('profiles').update({ webhook_url: webhookUrl || null }).eq('id', user.id);
+                                                setWebhookSaved(true);
+                                                setTimeout(() => setWebhookSaved(false), 2000);
+                                            }
+                                        }}
+                                        className="flex-1 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold transition-all flex items-center justify-center gap-1.5"
+                                    >
+                                        {webhookSaved ? '✓ SAVED' : 'SAVE WEBHOOK'}
+                                    </button>
+                                </div>
+
+                                {webhookStatus === 'success' && (
+                                    <div className="px-3 py-2 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-bold text-center">
+                                        ✓ Test signal received — webhook is active
+                                    </div>
+                                )}
+                                {webhookStatus === 'error' && (
+                                    <div className="px-3 py-2 rounded-lg bg-rose-50 border border-rose-200 text-rose-700 text-xs font-bold text-center">
+                                        ✗ Webhook unreachable — check URL and try again
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+
+                        {/* Broker Connect (Future - FCA) */}
                         <div className="bg-slate-900 rounded-3xl p-6 shadow-xl relative overflow-hidden">
                             <div className="absolute -right-4 -top-4 w-24 h-24 bg-blue-500/10 rounded-full blur-2xl"></div>
                             <div className="flex items-center gap-3 mb-4 relative z-10">
@@ -170,20 +266,14 @@ export default function SettingsPage() {
                                     <Key className="w-5 h-5 text-white" />
                                 </div>
                                 <div>
-                                    <h3 className="font-bold text-white">Execution Broker</h3>
-                                    <p className="text-xs text-slate-400">IBKR / TradeStation</p>
+                                    <h3 className="font-bold text-white">Direct Broker Connect</h3>
+                                    <p className="text-xs text-slate-400">Coming Q3 2026 — pending FCA</p>
                                 </div>
                             </div>
                             
-                            {brokerConnected ? (
-                                <div className="px-3 py-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold text-center">
-                                    BROKER CONNECTED
-                                </div>
-                            ) : (
-                                <button className="w-full py-2.5 rounded-xl bg-white hover:bg-slate-100 text-slate-900 text-sm font-bold transition-all flex justify-center items-center gap-2">
-                                    CONNECT API <ArrowRight className="w-4 h-4"/>
-                                </button>
-                            )}
+                            <div className="px-3 py-2 rounded-lg bg-white/5 border border-white/10 text-slate-400 text-xs font-bold text-center">
+                                IBKR / Robinhood / Trading 212 — Launching Soon
+                            </div>
                         </div>
                     </div>
                 </div>
