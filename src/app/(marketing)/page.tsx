@@ -121,7 +121,7 @@ export default function MarketingPage() {
             </div>
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-slate-900">Physics-Based Alpha.</h2>
             <p className="text-lg text-slate-500 max-w-2xl mx-auto">
-                <strong className="text-slate-700">You don&apos;t need a PhD to invest like one.</strong> Our core engine handles the proprietary quantum computations in the background, translating complex market physics into automated, hands-free execution directly in your brokerage account.
+                <strong className="text-slate-700">You don&apos;t need a PhD to invest like one.</strong> Our core engine handles the proprietary physics computations in the background, translating complex market dynamics into automated, hands-free execution directly in your brokerage account.
             </p>
         </div>
 
