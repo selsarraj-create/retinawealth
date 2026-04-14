@@ -152,28 +152,81 @@ export default function Dashboard() {
             {/* 1.5 EQUITY CURVE */}
             <EquityCurve />
 
-            {/* 2. THE CRASH SHIELD UPSELL (LOCKED) */}
-            <div className="relative rounded-3xl overflow-hidden border border-rose-500/20 bg-rose-950/20 p-8 min-h-[260px] flex flex-col md:flex-row items-center justify-center gap-8 group">
-                <div className="absolute inset-0 bg-black/40 backdrop-blur-md z-10 flex flex-col items-center justify-center p-8 text-center transition-all duration-300 group-hover:backdrop-blur-sm">
-                    <Lock className="w-8 h-8 text-rose-500 mb-4" />
-                    <h3 className="text-xl font-bold text-white mb-2">PREMIUM REGIME ALERT TRIGGERED</h3>
-                    <p className="text-slate-300 text-sm max-w-lg mx-auto mb-6">
-                        The core physics engine has detected a severe structural anomaly in global covariance matrices. Upgrade to the Crash Shield Tier to unlock the defensive rotation protocol and preserve your capital.
-                    </p>
-                    <button className="bg-rose-600 hover:bg-rose-500 text-white px-8 py-3.5 rounded-xl font-bold text-sm tracking-wide transition-colors flex items-center gap-2 shadow-[0_0_15px_rgba(225,29,72,0.4)]">
-                        Unlock Crash Shield ($25/mo)
-                    </button>
+            {/* 2. MARKET REGIME INDICATOR (Traffic Light) */}
+            <div className="bg-white border border-slate-200 rounded-3xl p-6 md:p-8 shadow-sm">
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
+                    <div>
+                        <h3 className="text-lg font-bold text-slate-900 tracking-tight flex items-center gap-2">
+                            Market Regime
+                            <span className="relative flex h-2.5 w-2.5">
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                            </span>
+                        </h3>
+                        <p className="text-sm text-slate-500 mt-0.5">Physics engine regime detection across 1,060 observables</p>
+                    </div>
+                    <div className="text-[11px] font-bold text-slate-500 uppercase tracking-widest">
+                        Updated: {new Date().toLocaleTimeString([], { hour12: false, hour: '2-digit', minute: '2-digit' })}
+                    </div>
                 </div>
 
-                {/* The blurred out fictional warning content below the blur */}
-                <div className="flex-1 opacity-30 select-none filter blur-[5px]">
-                    <div className="flex items-center gap-3 text-rose-500 font-bold uppercase tracking-widest text-sm mb-3">
-                        <AlertTriangle className="w-5 h-5" />
-                        Systemic Risk Detected: 96.5% Probability
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    {/* GREEN — Normal */}
+                    <div className="relative rounded-2xl p-5 bg-emerald-50 border-2 border-emerald-300 ring-2 ring-emerald-200/50">
+                        <div className="absolute top-3 right-3">
+                            <div className="w-4 h-4 rounded-full bg-emerald-500 shadow-[0_0_12px_rgba(16,185,129,0.6)]" />
+                        </div>
+                        <div className="flex items-center gap-3 mb-3">
+                            <div className="w-10 h-10 rounded-xl bg-emerald-500 flex items-center justify-center">
+                                <TrendingUp className="w-5 h-5 text-white" />
+                            </div>
+                            <div>
+                                <div className="text-xs font-bold text-emerald-700 uppercase tracking-wider">Normal</div>
+                                <div className="text-lg font-black text-emerald-800">ACTIVE</div>
+                            </div>
+                        </div>
+                        <p className="text-xs text-emerald-700 leading-relaxed">
+                            Covariance matrices within normal bounds. Full signal execution enabled. All positions active.
+                        </p>
                     </div>
-                    <p className="text-slate-400 text-sm leading-relaxed">
-                        Physics anomaly vector breach across 1,060 observables. Immediate market correction imminent. Recommendation: Liquidate 100% of open Long equities and hold in USD/Cash.
-                    </p>
+
+                    {/* AMBER — Elevated  */}
+                    <div className="relative rounded-2xl p-5 bg-slate-50 border border-slate-200 opacity-60">
+                        <div className="absolute top-3 right-3">
+                            <div className="w-4 h-4 rounded-full bg-amber-400" />
+                        </div>
+                        <div className="flex items-center gap-3 mb-3">
+                            <div className="w-10 h-10 rounded-xl bg-slate-200 flex items-center justify-center">
+                                <AlertTriangle className="w-5 h-5 text-slate-500" />
+                            </div>
+                            <div>
+                                <div className="text-xs font-bold text-slate-500 uppercase tracking-wider">Elevated</div>
+                                <div className="text-lg font-black text-slate-400">STANDBY</div>
+                            </div>
+                        </div>
+                        <p className="text-xs text-slate-500 leading-relaxed">
+                            Structural stress detected. Position sizing reduced to 50%. Speculative signals paused.
+                        </p>
+                    </div>
+
+                    {/* RED — Crisis */}
+                    <div className="relative rounded-2xl p-5 bg-slate-50 border border-slate-200 opacity-60">
+                        <div className="absolute top-3 right-3">
+                            <div className="w-4 h-4 rounded-full bg-rose-500" />
+                        </div>
+                        <div className="flex items-center gap-3 mb-3">
+                            <div className="w-10 h-10 rounded-xl bg-slate-200 flex items-center justify-center">
+                                <AlertTriangle className="w-5 h-5 text-slate-500" />
+                            </div>
+                            <div>
+                                <div className="text-xs font-bold text-slate-500 uppercase tracking-wider">Crisis</div>
+                                <div className="text-lg font-black text-slate-400">STANDBY</div>
+                            </div>
+                        </div>
+                        <p className="text-xs text-slate-500 leading-relaxed">
+                            Systemic anomaly detected. All positions liquidated. Capital held in cash until regime clears.
+                        </p>
+                    </div>
                 </div>
             </div>
 
