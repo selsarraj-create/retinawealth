@@ -32,7 +32,7 @@ export default function MarketingPage() {
             </h1>
             
             <p className="text-lg md:text-xl text-slate-500 max-w-xl font-light leading-relaxed">
-              Institutional-grade alpha generating a <strong className="text-emerald-700">41.7% Annual CAGR</strong> via a verified 52.9% win rate on stocks like Apple, Microsoft, and Google. We process the quantum mathematics in the background, so your broker executes the trades autonomously while you sleep.
+              Institutional-grade alpha generating a <strong className="text-emerald-700">41.7% Annual CAGR</strong> via a verified 52.9% win rate on stocks like Apple, Microsoft, and Google. We process the physics in the background, so your broker executes the trades autonomously while you sleep.
             </p>
             
             <div className="flex flex-col sm:flex-row items-center gap-4 pt-2 justify-center md:justify-start">
@@ -142,7 +142,7 @@ export default function MarketingPage() {
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-3">The +2.9% Edge</h3>
                 <p className="text-slate-500 leading-relaxed text-sm">
-                    A guaranteed coin flip is 50%. Our blind tests hit 52.9% win rates. That 2.9% mathematical edge compounded over time is the secret to institutional wealth, now available to your personal account.
+                    A fair coin flip is 50%. Our blind tests hit 52.9% win rates. That 2.9% mathematical edge compounded over time is the secret to institutional wealth, now available to your personal account.
                 </p>
             </div>
             <div className="group p-8 rounded-2xl bg-gradient-to-b from-white to-slate-50 border border-slate-200 hover:border-emerald-300 hover:shadow-lg hover:shadow-emerald-500/5 transition-all duration-300">
@@ -151,7 +151,7 @@ export default function MarketingPage() {
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-3">Blind OOS Validated</h3>
                 <p className="text-slate-500 leading-relaxed text-sm">
-                    Our performance is certified mathematically. The core model was frozen before 2025, meaning its 52.9% win rate comes from entirely unseen future data, guaranteeing unbiased accuracy you can trust.
+                    Our performance is certified mathematically. The core model was frozen before 2025, meaning its 52.9% win rate comes from entirely unseen future data, demonstrating unbiased accuracy you can trust.
                 </p>
             </div>
         </div>
@@ -180,7 +180,7 @@ export default function MarketingPage() {
              {/* Subtle gradient accent */}
              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-1 bg-gradient-to-r from-transparent via-emerald-500 to-transparent opacity-60"></div>
              
-             <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-10">Join the inner circle today.</h2>
+             <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-10">Your edge starts here.</h2>
              
              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
                  <div className="p-4 rounded-2xl bg-emerald-50 border border-emerald-100">
