@@ -19,12 +19,19 @@ export default function LoginPage() {
         setError(null);
 
         try {
-            const { error: signInError } = await supabase.auth.signInWithPassword({
+            const { data, error: signInError } = await supabase.auth.signInWithPassword({
                 email,
                 password,
             });
 
             if (signInError) throw signInError;
+            
+            if (!data.session) {
+                throw new Error("Login succeeded but no session was returned. Please check your email confirmation.");
+            }
+            
+            // Small delay to ensure cookies are written before redirect
+            await new Promise(resolve => setTimeout(resolve, 200));
             
             // Force hard browser reload to update the SSR middleware cookie scope
             window.location.href = '/dashboard';
