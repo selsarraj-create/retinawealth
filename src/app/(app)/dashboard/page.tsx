@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { ArrowUpRight, ArrowDownRight, Target, Clock, Zap, AlertTriangle, Lock, PlayCircle, TrendingUp, DollarSign } from 'lucide-react';
+import EquityCurve from '@/components/EquityCurve';
 
 type Signal = {
     id: string;
@@ -148,6 +149,9 @@ export default function Dashboard() {
                 </div>
             </div>
 
+            {/* 1.5 EQUITY CURVE */}
+            <EquityCurve />
+
             {/* 2. THE CRASH SHIELD UPSELL (LOCKED) */}
             <div className="relative rounded-3xl overflow-hidden border border-rose-500/20 bg-rose-950/20 p-8 min-h-[260px] flex flex-col md:flex-row items-center justify-center gap-8 group">
                 <div className="absolute inset-0 bg-black/40 backdrop-blur-md z-10 flex flex-col items-center justify-center p-8 text-center transition-all duration-300 group-hover:backdrop-blur-sm">
@@ -168,7 +172,7 @@ export default function Dashboard() {
                         Systemic Risk Detected: 96.5% Probability
                     </div>
                     <p className="text-slate-400 text-sm leading-relaxed">
-                        Thermodynamic anomaly vector breach across 1,060 observables. Immediate market correction imminent. Recommendation: Liquidate 100% of open Long equities and hold in USD/Cash.
+                        Physics anomaly vector breach across 1,060 observables. Immediate market correction imminent. Recommendation: Liquidate 100% of open Long equities and hold in USD/Cash.
                     </p>
                 </div>
             </div>
@@ -186,7 +190,7 @@ export default function Dashboard() {
                                </span>
                             )}
                         </h2>
-                        <span className="text-sm text-slate-500">Continuous thermodynamic edge processing</span>
+                        <span className="text-sm text-slate-500">Continuous physics-grade signal processing</span>
                     </div>
                     <div className="flex bg-white border border-slate-200 p-1 rounded-lg shrink-0 shadow-sm">
                         <div className="px-3 py-1 text-xs font-bold text-emerald-700">High (&gt;0.7)</div>

@@ -3,7 +3,7 @@
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { ReactNode } from 'react';
-import { Activity, LayoutDashboard, Settings, User } from 'lucide-react';
+import { Activity, LayoutDashboard, Settings, User, History, Briefcase } from 'lucide-react';
 import { RetinaLogo } from '@/components/Logo';
 
 export default function AppShell({ children }: { children: ReactNode }) {
@@ -25,9 +25,13 @@ export default function AppShell({ children }: { children: ReactNode }) {
                         <LayoutDashboard className="w-4 h-4" />
                         Live Signals
                     </Link>
-                    <Link href="/dashboard/performance" className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${pathname === '/dashboard/performance' ? 'bg-slate-100 text-slate-900' : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50'}`}>
-                        <Activity className="w-4 h-4" />
-                        Portfolio Identity
+                    <Link href="/dashboard/portfolio" className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${pathname === '/dashboard/portfolio' ? 'bg-slate-100 text-slate-900' : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50'}`}>
+                        <Briefcase className="w-4 h-4" />
+                        Portfolio
+                    </Link>
+                    <Link href="/dashboard/history" className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${pathname === '/dashboard/history' ? 'bg-slate-100 text-slate-900' : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50'}`}>
+                        <History className="w-4 h-4" />
+                        Trade History
                     </Link>
                     <Link href="/dashboard/settings" className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${pathname === '/dashboard/settings' ? 'bg-slate-100 text-slate-900' : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50'}`}>
                         <Settings className="w-4 h-4" />
@@ -78,14 +82,18 @@ export default function AppShell({ children }: { children: ReactNode }) {
             </div>
             
             {/* 5. Mobile Tab Bar */}
-            <nav className="md:hidden fixed bottom-0 left-0 right-0 h-[72px] bg-white/90 backdrop-blur-xl border-t border-slate-200 z-50 flex items-center justify-around px-6 pb-safe text-slate-500 shrink-0">
+            <nav className="md:hidden fixed bottom-0 left-0 right-0 h-[72px] bg-white/90 backdrop-blur-xl border-t border-slate-200 z-50 flex items-center justify-around px-4 pb-safe text-slate-500 shrink-0">
                 <Link href="/dashboard" className={`flex flex-col items-center justify-center gap-1 transition-colors ${pathname === '/dashboard' ? 'text-slate-900' : 'hover:text-slate-700'}`}>
                     <LayoutDashboard className="w-5 h-5" />
                     <span className="text-[10px] font-medium">Signals</span>
                 </Link>
-                <Link href="/dashboard/performance" className={`flex flex-col items-center justify-center gap-1 transition-colors ${pathname === '/dashboard/performance' ? 'text-slate-900' : 'hover:text-slate-700'}`}>
-                    <Activity className="w-5 h-5" />
+                <Link href="/dashboard/portfolio" className={`flex flex-col items-center justify-center gap-1 transition-colors ${pathname === '/dashboard/portfolio' ? 'text-slate-900' : 'hover:text-slate-700'}`}>
+                    <Briefcase className="w-5 h-5" />
                     <span className="text-[10px] font-medium">Portfolio</span>
+                </Link>
+                <Link href="/dashboard/history" className={`flex flex-col items-center justify-center gap-1 transition-colors ${pathname === '/dashboard/history' ? 'text-slate-900' : 'hover:text-slate-700'}`}>
+                    <History className="w-5 h-5" />
+                    <span className="text-[10px] font-medium">History</span>
                 </Link>
                 <Link href="/dashboard/settings" className={`flex flex-col items-center justify-center gap-1 transition-colors ${pathname === '/dashboard/settings' ? 'text-slate-900' : 'hover:text-slate-700'}`}>
                     <Settings className="w-5 h-5" />
