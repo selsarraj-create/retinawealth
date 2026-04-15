@@ -215,7 +215,7 @@ export default function MarketingPage() {
           <div className="mt-12 text-center">
             <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-emerald-500/10 border border-emerald-500/20">
               <ShieldCheck className="w-5 h-5 text-emerald-400" />
-              <span className="text-emerald-400 font-bold text-sm">Included free with every $99/mo subscription — no upgrade required</span>
+              <span className="text-emerald-400 font-bold text-sm">Included free with every account — no minimum balance required</span>
             </div>
           </div>
         </div>
