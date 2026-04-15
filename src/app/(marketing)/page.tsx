@@ -178,7 +178,7 @@ export default function MarketingPage() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-600">market crashes.</span>
             </h2>
             <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-              Every account includes our proprietary Crash Shield™ — a real-time anomaly detection system that monitors market structure and automatically reduces exposure before crashes unfold. No manual intervention required.
+              Every account includes our proprietary Crash Shield™ — a built-in early warning system that monitors hundreds of risk indicators in real-time and automatically reduces your exposure when danger is elevated. No manual intervention required.
             </p>
           </div>
 
@@ -187,9 +187,9 @@ export default function MarketingPage() {
               <div className="w-12 h-12 rounded-xl bg-red-500/10 flex items-center justify-center mb-5">
                 <Activity className="w-6 h-6 text-red-400" />
               </div>
-              <h3 className="text-lg font-bold text-white mb-2">Real-Time Monitoring</h3>
+              <h3 className="text-lg font-bold text-white mb-2">Always-On Scanning</h3>
               <p className="text-sm text-slate-400 leading-relaxed">
-                The shield continuously scans for eigenvalue convergence patterns — the same physics signature detected before COVID, SVB, and every major crash since 2008.
+                The shield continuously monitors cross-market risk signals around the clock — the same warning patterns that preceded COVID, SVB, and every major downturn since 2008.
               </p>
             </div>
             <div className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
@@ -198,16 +198,16 @@ export default function MarketingPage() {
               </div>
               <h3 className="text-lg font-bold text-white mb-2">Automatic Protection</h3>
               <p className="text-sm text-slate-400 leading-relaxed">
-                When the shield detects structural instability, it automatically scales down your positions. No alerts to check, no panic selling, no decisions to make. It just protects you.
+                When elevated risk is detected, the shield automatically scales down your positions. No alerts to check, no panic selling, no decisions to make. It just protects you.
               </p>
             </div>
             <div className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
               <div className="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center mb-5">
                 <TrendingUp className="w-6 h-6 text-emerald-400" />
               </div>
-              <h3 className="text-lg font-bold text-white mb-2">Re-Entry Signals</h3>
+              <h3 className="text-lg font-bold text-white mb-2">Smart Re-Entry</h3>
               <p className="text-sm text-slate-400 leading-relaxed">
-                After a crash, the shield detects when market structure stabilises and automatically re-enters positions — capturing the recovery that most retail investors miss.
+                After a downturn, the shield detects when conditions normalise and automatically re-enters positions — capturing the recovery that most retail investors miss.
               </p>
             </div>
           </div>
