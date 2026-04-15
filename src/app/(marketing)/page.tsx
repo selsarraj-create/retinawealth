@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ShieldCheck, Zap, TrendingUp, CheckCircle, Lock, BarChart3 } from 'lucide-react';
+import { ShieldCheck, Zap, TrendingUp, CheckCircle, Lock, BarChart3, AlertTriangle, Activity } from 'lucide-react';
 import FAQ from '@/components/FAQ';
 import GrowthCalculator from '@/components/GrowthCalculator';
 
@@ -8,6 +8,7 @@ const socialProof = [
   "Model Frozen Pre-2025",
   "32,000+ Verified Trades",
   "Proprietary Physics Engine",
+  "Crash Shield™ Included",
 ];
 
 export default function MarketingPage() {
@@ -157,6 +158,69 @@ export default function MarketingPage() {
         </div>
       </section>
 
+      {/* 3.5 CRASH SHIELD SECTION */}
+      <section className="py-24 px-6 bg-slate-900 relative overflow-hidden">
+        {/* Animated pulse background */}
+        <div className="absolute inset-0 opacity-[0.03]">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full border border-emerald-400 animate-ping" style={{ animationDuration: '4s' }}></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-emerald-400 animate-ping" style={{ animationDuration: '4s', animationDelay: '1s' }}></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full border border-emerald-400 animate-ping" style={{ animationDuration: '4s', animationDelay: '2s' }}></div>
+        </div>
+
+        <div className="max-w-5xl mx-auto relative z-10">
+          <div className="text-center space-y-6 mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-xs font-bold font-mono tracking-wider">
+              <AlertTriangle className="w-3.5 h-3.5" />
+              CRASH SHIELD™ INCLUDED FREE
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white">
+              Sleep through<br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-600">market crashes.</span>
+            </h2>
+            <p className="text-lg text-slate-400 max-w-2xl mx-auto">
+              Every account includes our proprietary Crash Shield™ — a real-time anomaly detection system that monitors market structure and automatically reduces exposure before crashes unfold. No manual intervention required.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
+              <div className="w-12 h-12 rounded-xl bg-red-500/10 flex items-center justify-center mb-5">
+                <Activity className="w-6 h-6 text-red-400" />
+              </div>
+              <h3 className="text-lg font-bold text-white mb-2">Real-Time Monitoring</h3>
+              <p className="text-sm text-slate-400 leading-relaxed">
+                The shield continuously scans for eigenvalue convergence patterns — the same physics signature detected before COVID, SVB, and every major crash since 2008.
+              </p>
+            </div>
+            <div className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
+              <div className="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center mb-5">
+                <ShieldCheck className="w-6 h-6 text-amber-400" />
+              </div>
+              <h3 className="text-lg font-bold text-white mb-2">Automatic Protection</h3>
+              <p className="text-sm text-slate-400 leading-relaxed">
+                When the shield detects structural instability, it automatically scales down your positions. No alerts to check, no panic selling, no decisions to make. It just protects you.
+              </p>
+            </div>
+            <div className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
+              <div className="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center mb-5">
+                <TrendingUp className="w-6 h-6 text-emerald-400" />
+              </div>
+              <h3 className="text-lg font-bold text-white mb-2">Re-Entry Signals</h3>
+              <p className="text-sm text-slate-400 leading-relaxed">
+                After a crash, the shield detects when market structure stabilises and automatically re-enters positions — capturing the recovery that most retail investors miss.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-12 text-center">
+            <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-emerald-500/10 border border-emerald-500/20">
+              <ShieldCheck className="w-5 h-5 text-emerald-400" />
+              <span className="text-emerald-400 font-bold text-sm">Included free with every $99/mo subscription — no upgrade required</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 4. FAQ SECTION */}
       <section id="faq" className="py-24 px-6 bg-slate-50 border-t border-slate-200">
         <div className="max-w-4xl mx-auto text-center space-y-4 mb-16">
@@ -203,7 +267,12 @@ export default function MarketingPage() {
 
              <div className="bg-white border border-slate-200 p-8 rounded-2xl max-w-lg mx-auto shadow-sm">
                  <h3 className="text-2xl font-bold text-slate-900 mb-2">Standard Access</h3>
-                 <p className="text-slate-500 mb-6 text-sm">Full access to automated portfolio execution. From the S&P 500 to global equities, the engine handles the trading entirely for you.</p>
+                 <p className="text-slate-500 mb-6 text-sm">Full access to automated portfolio execution with Crash Shield™ protection. From the S&P 500 to global equities, the engine handles the trading entirely for you.</p>
+
+                 <div className="flex items-center gap-2 px-4 py-2.5 mb-6 rounded-xl bg-red-50 border border-red-100">
+                   <ShieldCheck className="w-4 h-4 text-red-500 flex-shrink-0" />
+                   <span className="text-xs font-bold text-red-700">Crash Shield™ included free</span>
+                 </div>
                  <div className="text-5xl font-black text-slate-900 mb-6">$99<span className="text-xl text-slate-500 font-medium">/mo</span></div>
                  
                  {/* Investment limits */}
