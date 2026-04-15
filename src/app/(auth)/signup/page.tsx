@@ -73,8 +73,8 @@ export default function SignupPage() {
                             <ShieldCheck className="w-5 h-5 text-slate-700" />
                         </div>
                         <div>
-                            <h3 className="text-slate-900 font-bold mb-1">Crash Protection</h3>
-                            <p className="text-slate-500 text-sm leading-relaxed">The core physics engine actively monitors global covariance anomalies and shields your capital.</p>
+                            <h3 className="text-slate-900 font-bold mb-1">Crash Shield™</h3>
+                            <p className="text-slate-500 text-sm leading-relaxed">The core physics engine actively monitors cross-market risk signals and automatically shields your capital.</p>
                         </div>
                     </div>
                 </div>
