@@ -8,7 +8,7 @@ const socialProof = [
   "Model Frozen Pre-2025",
   "32,000+ Verified Trades",
   "Proprietary Physics Engine",
-  "Crash Shield™ Included",
+  "Crash Shield Included",
 ];
 
 export default function MarketingPage() {
@@ -171,14 +171,14 @@ export default function MarketingPage() {
           <div className="text-center space-y-6 mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-xs font-bold font-mono tracking-wider">
               <AlertTriangle className="w-3.5 h-3.5" />
-              CRASH SHIELD™ INCLUDED FREE
+              CRASH SHIELD INCLUDED FREE
             </div>
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white">
               Sleep through<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-600">market crashes.</span>
             </h2>
             <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-              Every account includes our proprietary Crash Shield™ — a built-in early warning system that monitors hundreds of risk indicators in real-time and automatically reduces your exposure when danger is elevated. No manual intervention required.
+              Every account includes our proprietary Crash Shield — a built-in early warning system that monitors hundreds of risk indicators in real-time and automatically reduces your exposure when danger is elevated. No manual intervention required.
             </p>
           </div>
 
