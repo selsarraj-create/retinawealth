@@ -51,7 +51,7 @@ export default function SignupPage() {
                         <RetinaLogo className="w-6 h-6" />
                     </div>
                     <h1 className="text-4xl font-black text-slate-900 tracking-tight mb-4">
-                        Automate the <br/><span className="text-emerald-700">Thermodynamic Edge.</span>
+                        Automate the <br/><span className="text-emerald-700">Edge.</span>
                     </h1>
                     <p className="text-slate-500 text-lg leading-relaxed max-w-md">
                         Institutional-grade quantitative intelligence, directly piped into your brokerage account without human interference.
