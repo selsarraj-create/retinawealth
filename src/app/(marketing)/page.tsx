@@ -282,12 +282,19 @@ export default function MarketingPage() {
                      <div className="text-xl font-black text-emerald-600">$0<span className="text-xs text-emerald-500/70 font-medium">/mo</span></div>
                  </div>
 
-                 <div className="flex justify-between items-end border-b border-slate-100 pb-4 mb-6">
+                 <div className="flex justify-between items-end pb-3 mb-2">
                      <div>
                          <div className="text-sm font-bold text-slate-900">$10,000 — $25,000</div>
                          <div className="text-xs text-slate-500">+$99 per additional $10k tier</div>
                      </div>
                      <div className="text-xl font-black text-slate-900">$99<span className="text-xs text-slate-500 font-medium">/mo</span></div>
+                 </div>
+                 
+                 <div className="flex items-center gap-2 px-3 py-2 mb-6 rounded-lg bg-blue-50 border border-blue-100/50">
+                    <div className="w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0 animate-pulse"></div>
+                    <span className="text-[11px] font-medium text-blue-800 leading-tight">
+                        <strong>60-Day Upgrade Grace Period:</strong> Cross $10k? Your next 60 days are on us to ensure the scaling edge pays for itself before you are ever billed.
+                    </span>
                  </div>
 
                  <Link href="/signup" className="block w-full py-4 text-center rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-lg transition-all shadow-lg shadow-emerald-600/25 hover:shadow-emerald-600/40">
