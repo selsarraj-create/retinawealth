@@ -4,7 +4,7 @@ import FAQ from '@/components/FAQ';
 import GrowthCalculator from '@/components/GrowthCalculator';
 
 const socialProof = [
-  "Blind OOS Validated",
+  "Blind-Tested Accuracy",
   "Model Frozen Pre-2025",
   "32,000+ Verified Trades",
   "Proprietary Physics Engine",
@@ -28,8 +28,8 @@ export default function MarketingPage() {
             </div>
             
             <h1 className="text-5xl md:text-7xl font-extrabold text-slate-900 tracking-tight leading-[1.05]">
-              The hedge fund&nbsp;edge,<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-emerald-800">democratised.</span>
+              Institutional alpha.<br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-emerald-800">Now in your brokerage.</span>
             </h1>
             
             <p className="text-lg md:text-xl text-slate-500 max-w-xl font-light leading-relaxed">
@@ -150,7 +150,7 @@ export default function MarketingPage() {
                 <div className="w-14 h-14 rounded-2xl bg-slate-900 flex items-center justify-center mb-6 group-hover:bg-emerald-600 transition-colors duration-300">
                   <ShieldCheck className="w-7 h-7 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">Blind OOS Validated</h3>
+                <h3 className="text-xl font-bold text-slate-900 mb-3">Blind-Tested Accuracy</h3>
                 <p className="text-slate-500 leading-relaxed text-sm">
                     Our performance is certified mathematically. The core model was frozen before 2025, meaning its 52.9% win rate comes from entirely unseen future data, demonstrating unbiased accuracy you can trust.
                 </p>
@@ -266,31 +266,34 @@ export default function MarketingPage() {
              </div>
 
              <div className="bg-white border border-slate-200 p-8 rounded-2xl max-w-lg mx-auto shadow-sm">
-                 <h3 className="text-2xl font-bold text-slate-900 mb-2">Standard Access</h3>
-                 <p className="text-slate-500 mb-6 text-sm">Full access to automated portfolio execution with Crash Shield™ protection. From the S&P 500 to global equities, the engine handles the trading entirely for you.</p>
+                 <h3 className="text-2xl font-bold text-slate-900 mb-2">Fair-Share Pricing</h3>
+                 <p className="text-slate-500 mb-6 text-sm">We only win when you grow. Start trading with institutional physics completely free. Upgrade only when your portfolio scales.</p>
 
-                 <div className="flex items-center gap-2 px-4 py-2.5 mb-6 rounded-xl bg-red-50 border border-red-100">
-                   <ShieldCheck className="w-4 h-4 text-red-500 flex-shrink-0" />
-                   <span className="text-xs font-bold text-red-700">Crash Shield™ included free</span>
+                 <div className="flex items-center gap-2 px-4 py-2.5 mb-6 rounded-xl bg-emerald-50 border border-emerald-100">
+                   <Zap className="w-4 h-4 text-emerald-500 flex-shrink-0" />
+                   <span className="text-xs font-bold text-emerald-700">Accounts under $10,000 trade FREE forever</span>
                  </div>
-                 <div className="text-5xl font-black text-slate-900 mb-6">$99<span className="text-xl text-slate-500 font-medium">/mo</span></div>
                  
-                 {/* Investment limits */}
-                 <div className="flex justify-center gap-4 mb-6">
-                   <div className="px-4 py-2 rounded-xl bg-emerald-50 border border-emerald-100">
-                     <div className="text-xs font-bold text-emerald-700">No Minimum</div>
-                     <div className="text-[11px] text-emerald-600/60">Start with any amount</div>
-                   </div>
-                   <div className="px-4 py-2 rounded-xl bg-slate-50 border border-slate-200">
-                     <div className="text-xs font-bold text-slate-700">$500K Maximum</div>
-                     <div className="text-[11px] text-slate-400">Built for retail, not Wall St</div>
-                   </div>
+                 <div className="flex justify-between items-end border-b border-slate-100 pb-4 mb-4">
+                     <div>
+                         <div className="text-sm font-bold text-slate-900">Up to $10,000</div>
+                         <div className="text-xs text-slate-500">Perfect for getting started</div>
+                     </div>
+                     <div className="text-xl font-black text-emerald-600">$0<span className="text-xs text-emerald-500/70 font-medium">/mo</span></div>
+                 </div>
+
+                 <div className="flex justify-between items-end border-b border-slate-100 pb-4 mb-6">
+                     <div>
+                         <div className="text-sm font-bold text-slate-900">$10,000 — $25,000</div>
+                         <div className="text-xs text-slate-500">+$99 per additional $10k tier</div>
+                     </div>
+                     <div className="text-xl font-black text-slate-900">$99<span className="text-xs text-slate-500 font-medium">/mo</span></div>
                  </div>
 
                  <Link href="/signup" className="block w-full py-4 text-center rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-lg transition-all shadow-lg shadow-emerald-600/25 hover:shadow-emerald-600/40">
-                     Get Early Access
+                     Start Free Tier
                  </Link>
-                 <p className="text-xs text-slate-500 mt-4">Free paper trading with live signals. $99/mo when live trading launches.</p>
+                 <p className="text-xs text-slate-500 mt-4">Free paper trading with live signals. Connect your broker anytime.</p>
              </div>
 
              {/* Trust badges */}
