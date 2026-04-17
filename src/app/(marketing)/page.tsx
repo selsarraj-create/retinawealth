@@ -1,7 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { ShieldCheck, Zap, TrendingUp, CheckCircle, Lock, BarChart3, AlertTriangle, Activity } from 'lucide-react';
+import { useState } from 'react';
+import { ShieldCheck, Zap, TrendingUp, CheckCircle, Lock, BarChart3, AlertTriangle, Activity, ChevronDown } from 'lucide-react';
 import FAQ from '@/components/FAQ';
 import GrowthCalculator from '@/components/GrowthCalculator';
 import TopologicalMesh from '@/components/TopologicalMesh';
@@ -15,6 +16,29 @@ const socialProof = [
 ];
 
 export default function MarketingPage() {
+  const [openShield, setOpenShield] = useState<number | null>(null);
+  const [openScience, setOpenScience] = useState<number | null>(null);
+
+  const shieldCards = [
+    {
+      icon: <Activity className="w-5 h-5 text-red-400" />,
+      iconBg: 'bg-red-500/10',
+      title: 'Always-On Scanning',
+      text: 'The shield continuously monitors cross-market risk signals around the clock — the same warning patterns that preceded COVID, SVB, and every major downturn since 2008.',
+    },
+    {
+      icon: <ShieldCheck className="w-5 h-5 text-amber-400" />,
+      iconBg: 'bg-amber-500/10',
+      title: 'Automatic Protection',
+      text: 'When elevated risk is detected, the shield automatically scales down your positions. No alerts to check, no panic selling, no decisions to make. It just protects you.',
+    },
+    {
+      icon: <TrendingUp className="w-5 h-5 text-emerald-400" />,
+      iconBg: 'bg-emerald-500/10',
+      title: 'Smart Re-Entry',
+      text: 'After a downturn, the shield detects when conditions normalise and automatically re-enters positions — capturing the recovery that most retail investors miss.',
+    },
+  ];
   return (
     <div className="w-full relative">
 
@@ -99,7 +123,8 @@ export default function MarketingPage() {
             </p>
         </div>
 
-        <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
+        {/* Desktop: grid */}
+        <div className="max-w-6xl mx-auto hidden md:grid md:grid-cols-3 gap-6">
             <div className="group p-8 rounded-2xl bg-gradient-to-b from-white to-slate-50 border border-slate-200 hover:border-emerald-300 hover:shadow-lg hover:shadow-emerald-500/5 transition-all duration-300">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 rounded-xl bg-slate-900 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-600 transition-colors duration-300">
@@ -134,6 +159,33 @@ export default function MarketingPage() {
                 </p>
             </div>
         </div>
+
+        {/* Mobile: accordion */}
+        <div className="max-w-6xl mx-auto md:hidden space-y-3">
+          {[
+            { icon: <Zap className="w-5 h-5 text-white" />, iconBg: 'bg-slate-900', title: 'Market Physics', text: 'Behind the scenes, the engine compresses 1,060 market signals into 85 physics-grade features derived from liquidity and volatility dynamics. You simply connect your broker and let the engine execute the mathematics autonomously.' },
+            { icon: <BarChart3 className="w-5 h-5 text-white" />, iconBg: 'bg-emerald-600', title: 'The +2.9% Edge', text: 'A fair coin flip is 50%. Our blind tests hit 52.9% win rates. That 2.9% mathematical edge compounded over time is the secret to institutional wealth, now available to your personal account.' },
+            { icon: <ShieldCheck className="w-5 h-5 text-white" />, iconBg: 'bg-slate-900', title: 'Blind-Tested Accuracy', text: 'Our performance is certified mathematically. The core model was frozen before 2025, meaning its 52.9% win rate comes from entirely unseen future data, demonstrating unbiased accuracy you can trust.' },
+          ].map((card, i) => (
+            <div key={i} className="rounded-2xl bg-gradient-to-b from-white to-slate-50 border border-slate-200 overflow-hidden">
+              <button
+                onClick={() => setOpenScience(openScience === i ? null : i)}
+                className="w-full p-5 flex items-center justify-between text-left"
+              >
+                <div className="flex items-center gap-3">
+                  <div className={`w-10 h-10 rounded-lg ${card.iconBg} flex items-center justify-center flex-shrink-0`}>
+                    {card.icon}
+                  </div>
+                  <h3 className="text-base font-bold text-slate-900">{card.title}</h3>
+                </div>
+                <ChevronDown className={`w-5 h-5 text-slate-400 transition-transform duration-300 ${openScience === i ? 'rotate-180' : ''}`} />
+              </button>
+              <div className={`overflow-hidden transition-all duration-300 ${openScience === i ? 'max-h-40 pb-5 px-5' : 'max-h-0'}`}>
+                <p className="text-sm text-slate-500 leading-relaxed">{card.text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* 3.5 CRASH SHIELD SECTION */}
@@ -159,40 +211,42 @@ export default function MarketingPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center flex-shrink-0">
-                  <Activity className="w-5 h-5 text-red-400" />
+          {/* Desktop: grid, Mobile: accordion */}
+          <div className="hidden md:grid md:grid-cols-3 gap-6">
+            {shieldCards.map((card, i) => (
+              <div key={i} className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className={`w-10 h-10 rounded-lg ${card.iconBg} flex items-center justify-center flex-shrink-0`}>
+                    {card.icon}
+                  </div>
+                  <h3 className="text-lg font-bold text-white">{card.title}</h3>
                 </div>
-                <h3 className="text-lg font-bold text-white">Always-On Scanning</h3>
+                <p className="text-sm text-slate-400 leading-relaxed">{card.text}</p>
               </div>
-              <p className="text-sm text-slate-400 leading-relaxed">
-                The shield continuously monitors cross-market risk signals around the clock — the same warning patterns that preceded COVID, SVB, and every major downturn since 2008.
-              </p>
-            </div>
-            <div className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center flex-shrink-0">
-                  <ShieldCheck className="w-5 h-5 text-amber-400" />
+            ))}
+          </div>
+
+          {/* Mobile: accordion */}
+          <div className="md:hidden space-y-3">
+            {shieldCards.map((card, i) => (
+              <div key={i} className="rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm overflow-hidden">
+                <button
+                  onClick={() => setOpenShield(openShield === i ? null : i)}
+                  className="w-full p-5 flex items-center justify-between text-left"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className={`w-10 h-10 rounded-lg ${card.iconBg} flex items-center justify-center flex-shrink-0`}>
+                      {card.icon}
+                    </div>
+                    <h3 className="text-base font-bold text-white">{card.title}</h3>
+                  </div>
+                  <ChevronDown className={`w-5 h-5 text-slate-400 transition-transform duration-300 ${openShield === i ? 'rotate-180' : ''}`} />
+                </button>
+                <div className={`overflow-hidden transition-all duration-300 ${openShield === i ? 'max-h-40 pb-5 px-5' : 'max-h-0'}`}>
+                  <p className="text-sm text-slate-400 leading-relaxed">{card.text}</p>
                 </div>
-                <h3 className="text-lg font-bold text-white">Automatic Protection</h3>
               </div>
-              <p className="text-sm text-slate-400 leading-relaxed">
-                When elevated risk is detected, the shield automatically scales down your positions. No alerts to check, no panic selling, no decisions to make. It just protects you.
-              </p>
-            </div>
-            <div className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center flex-shrink-0">
-                  <TrendingUp className="w-5 h-5 text-emerald-400" />
-                </div>
-                <h3 className="text-lg font-bold text-white">Smart Re-Entry</h3>
-              </div>
-              <p className="text-sm text-slate-400 leading-relaxed">
-                After a downturn, the shield detects when conditions normalise and automatically re-enters positions — capturing the recovery that most retail investors miss.
-              </p>
-            </div>
+            ))}
           </div>
 
           <div className="mt-12 text-center">
@@ -204,7 +258,10 @@ export default function MarketingPage() {
         </div>
       </section>
 
-      {/* 4. FAQ SECTION */}
+      {/* 4. GROWTH CALCULATOR — moved above FAQ */}
+      <GrowthCalculator />
+
+      {/* 5. FAQ SECTION */}
       <section id="faq" className="py-24 px-6 bg-slate-50 border-t border-slate-200">
         <div className="max-w-4xl mx-auto text-center space-y-4 mb-16">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-600 text-xs font-bold font-mono tracking-wider">
@@ -218,15 +275,12 @@ export default function MarketingPage() {
         <FAQ />
       </section>
 
-      {/* 4.5 GROWTH CALCULATOR */}
-      <GrowthCalculator />
-
-      {/* 5. PERFORMANCE & CTA */}
+      {/* 6. PERFORMANCE & CTA */}
       <section id="pricing" className="py-24 px-6 bg-white border-t border-slate-200">
          <div className="max-w-5xl mx-auto bg-gradient-to-b from-slate-50 to-white border border-slate-200 rounded-3xl p-8 md:p-16 text-center shadow-xl relative overflow-hidden">
              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-1 bg-gradient-to-r from-transparent via-emerald-500 to-transparent opacity-60"></div>
              
-             <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-10">Bringing Wall St to Retail.</h2>
+             <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-10">The Numbers.</h2>
              
              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
                  <div className="p-4 rounded-2xl bg-emerald-50 border border-emerald-100">
