@@ -101,28 +101,34 @@ export default function MarketingPage() {
 
         <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
             <div className="group p-8 rounded-2xl bg-gradient-to-b from-white to-slate-50 border border-slate-200 hover:border-emerald-300 hover:shadow-lg hover:shadow-emerald-500/5 transition-all duration-300">
-                <div className="w-14 h-14 rounded-2xl bg-slate-900 flex items-center justify-center mb-6 group-hover:bg-emerald-600 transition-colors duration-300">
-                  <Zap className="w-7 h-7 text-white" />
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-slate-900 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-600 transition-colors duration-300">
+                    <Zap className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900">Market Physics</h3>
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">Market Physics</h3>
                 <p className="text-slate-500 leading-relaxed text-sm">
                     Behind the scenes, the engine compresses 1,060 market signals into 85 physics-grade features derived from liquidity and volatility dynamics. You simply connect your broker and let the engine execute the mathematics autonomously.
                 </p>
             </div>
             <div className="group p-8 rounded-2xl bg-gradient-to-b from-white to-slate-50 border border-slate-200 hover:border-emerald-300 hover:shadow-lg hover:shadow-emerald-500/5 transition-all duration-300">
-                <div className="w-14 h-14 rounded-2xl bg-emerald-600 flex items-center justify-center mb-6 group-hover:bg-emerald-700 transition-colors duration-300">
-                  <BarChart3 className="w-7 h-7 text-white" />
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-emerald-600 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-700 transition-colors duration-300">
+                    <BarChart3 className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900">The +2.9% Edge</h3>
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">The +2.9% Edge</h3>
                 <p className="text-slate-500 leading-relaxed text-sm">
                     A fair coin flip is 50%. Our blind tests hit 52.9% win rates. That 2.9% mathematical edge compounded over time is the secret to institutional wealth, now available to your personal account.
                 </p>
             </div>
             <div className="group p-8 rounded-2xl bg-gradient-to-b from-white to-slate-50 border border-slate-200 hover:border-emerald-300 hover:shadow-lg hover:shadow-emerald-500/5 transition-all duration-300">
-                <div className="w-14 h-14 rounded-2xl bg-slate-900 flex items-center justify-center mb-6 group-hover:bg-emerald-600 transition-colors duration-300">
-                  <ShieldCheck className="w-7 h-7 text-white" />
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-slate-900 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-600 transition-colors duration-300">
+                    <ShieldCheck className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900">Blind-Tested Accuracy</h3>
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">Blind-Tested Accuracy</h3>
                 <p className="text-slate-500 leading-relaxed text-sm">
                     Our performance is certified mathematically. The core model was frozen before 2025, meaning its 52.9% win rate comes from entirely unseen future data, demonstrating unbiased accuracy you can trust.
                 </p>
@@ -155,28 +161,34 @@ export default function MarketingPage() {
 
           <div className="grid md:grid-cols-3 gap-6">
             <div className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
-              <div className="w-12 h-12 rounded-xl bg-red-500/10 flex items-center justify-center mb-5">
-                <Activity className="w-6 h-6 text-red-400" />
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center flex-shrink-0">
+                  <Activity className="w-5 h-5 text-red-400" />
+                </div>
+                <h3 className="text-lg font-bold text-white">Always-On Scanning</h3>
               </div>
-              <h3 className="text-lg font-bold text-white mb-2">Always-On Scanning</h3>
               <p className="text-sm text-slate-400 leading-relaxed">
                 The shield continuously monitors cross-market risk signals around the clock — the same warning patterns that preceded COVID, SVB, and every major downturn since 2008.
               </p>
             </div>
             <div className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
-              <div className="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center mb-5">
-                <ShieldCheck className="w-6 h-6 text-amber-400" />
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center flex-shrink-0">
+                  <ShieldCheck className="w-5 h-5 text-amber-400" />
+                </div>
+                <h3 className="text-lg font-bold text-white">Automatic Protection</h3>
               </div>
-              <h3 className="text-lg font-bold text-white mb-2">Automatic Protection</h3>
               <p className="text-sm text-slate-400 leading-relaxed">
                 When elevated risk is detected, the shield automatically scales down your positions. No alerts to check, no panic selling, no decisions to make. It just protects you.
               </p>
             </div>
             <div className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
-              <div className="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center mb-5">
-                <TrendingUp className="w-6 h-6 text-emerald-400" />
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center flex-shrink-0">
+                  <TrendingUp className="w-5 h-5 text-emerald-400" />
+                </div>
+                <h3 className="text-lg font-bold text-white">Smart Re-Entry</h3>
               </div>
-              <h3 className="text-lg font-bold text-white mb-2">Smart Re-Entry</h3>
               <p className="text-sm text-slate-400 leading-relaxed">
                 After a downturn, the shield detects when conditions normalise and automatically re-enters positions — capturing the recovery that most retail investors miss.
               </p>
