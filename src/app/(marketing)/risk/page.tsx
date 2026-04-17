@@ -32,8 +32,8 @@ export default function RiskPage() {
         </section>
 
         <section>
-          <h2 className="text-xl font-bold text-slate-900 mb-3">4. Crash Shield Limitations</h2>
-          <p className="text-slate-600 leading-relaxed">The Crash Shield feature is designed to reduce exposure during periods of elevated market risk. However, it is not a guarantee against losses. The shield may not activate quickly enough during sudden market dislocations, may produce false signals, or may reduce exposure prematurely during normal market fluctuations.</p>
+          <h2 className="text-xl font-bold text-slate-900 mb-3">4. Drawdown Protection Limitations</h2>
+          <p className="text-slate-600 leading-relaxed">The Drawdown Protection feature is designed to reduce exposure during periods of elevated market risk. However, it is not a guarantee against losses. The system may not react quickly enough during sudden market dislocations, may produce false signals, or may reduce exposure prematurely during normal market fluctuations.</p>
         </section>
 
         <section>

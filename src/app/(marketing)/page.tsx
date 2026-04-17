@@ -2,17 +2,17 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { ShieldCheck, Zap, TrendingUp, CheckCircle, Lock, BarChart3, AlertTriangle, Activity, ChevronDown } from 'lucide-react';
+import { Zap, TrendingUp, CheckCircle, Lock, BarChart3, AlertTriangle, Activity, ChevronDown, Target, LineChart, Wallet } from 'lucide-react';
 import FAQ from '@/components/FAQ';
 import GrowthCalculator from '@/components/GrowthCalculator';
 import TopologicalMesh from '@/components/TopologicalMesh';
 
 const socialProof = [
-  "Blind-Tested Accuracy",
+  "Out-of-Sample Verified",
   "Model Frozen Pre-2025",
   "32,000+ Verified Trades",
   "Proprietary Physics Engine",
-  "Crash Shield Included",
+  "Drawdown Protection Built In",
 ];
 
 export default function MarketingPage() {
@@ -21,22 +21,22 @@ export default function MarketingPage() {
 
   const shieldCards = [
     {
-      icon: <Activity className="w-5 h-5 text-red-400" />,
-      iconBg: 'bg-red-500/10',
-      title: 'Always-On Scanning',
-      text: 'The shield continuously monitors cross-market risk signals around the clock — the same warning patterns that preceded COVID, SVB, and every major downturn since 2008.',
+      icon: <Activity className="w-5 h-5 text-amber-400" />,
+      iconBg: 'bg-amber-500/10',
+      title: '24/7 Market Surveillance',
+      text: 'The engine monitors cross-market risk signals around the clock — the same volatility patterns that preceded COVID, SVB, and every major downturn since 2008.',
     },
     {
-      icon: <ShieldCheck className="w-5 h-5 text-amber-400" />,
+      icon: <Target className="w-5 h-5 text-amber-400" />,
       iconBg: 'bg-amber-500/10',
-      title: 'Automatic Protection',
-      text: 'When elevated risk is detected, the shield automatically scales down your positions. No alerts to check, no panic selling, no decisions to make. It just protects you.',
+      title: 'Autonomous De-Risking',
+      text: 'When elevated risk is detected, the engine automatically scales down your positions. No alerts to check, no panic selling, no decisions to make. It simply reduces exposure.',
     },
     {
       icon: <TrendingUp className="w-5 h-5 text-emerald-400" />,
       iconBg: 'bg-emerald-500/10',
-      title: 'Smart Re-Entry',
-      text: 'After a downturn, the shield detects when conditions normalise and automatically re-enters positions — capturing the recovery that most retail investors miss.',
+      title: 'Recovery Capture',
+      text: 'After a downturn, the engine detects when conditions normalise and automatically re-enters positions — capturing the recovery that most retail investors miss.',
     },
   ];
   return (
@@ -50,10 +50,10 @@ export default function MarketingPage() {
         
         <div className="relative z-20 max-w-6xl mx-auto flex flex-col items-center text-center px-6">
           
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold font-mono backdrop-blur-md shadow-[0_0_15px_rgba(16,185,129,0.15)]">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-bold font-mono backdrop-blur-md shadow-[0_0_15px_rgba(245,158,11,0.1)]">
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-400"></span>
             </span>
             RETINA V1.0 ENGINE LIVE
           </div>
@@ -147,10 +147,10 @@ export default function MarketingPage() {
                     A fair coin flip is 50%. Our blind tests hit 52.9% win rates. That 2.9% mathematical edge compounded over time is the secret to institutional wealth, now available to your personal account.
                 </p>
             </div>
-            <div className="group p-8 rounded-2xl bg-gradient-to-b from-white to-slate-50 border border-slate-200 hover:border-emerald-300 hover:shadow-lg hover:shadow-emerald-500/5 transition-all duration-300">
+            <div className="group p-8 rounded-2xl bg-gradient-to-b from-white to-slate-50 border border-slate-200 hover:border-amber-300 hover:shadow-lg hover:shadow-amber-500/5 transition-all duration-300">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-slate-900 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-600 transition-colors duration-300">
-                    <ShieldCheck className="w-6 h-6 text-white" />
+                  <div className="w-12 h-12 rounded-xl bg-amber-500 flex items-center justify-center flex-shrink-0 group-hover:bg-amber-600 transition-colors duration-300">
+                    <Target className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-slate-900">Blind-Tested Accuracy</h3>
                 </div>
@@ -165,7 +165,7 @@ export default function MarketingPage() {
           {[
             { icon: <Zap className="w-5 h-5 text-white" />, iconBg: 'bg-slate-900', title: 'Market Physics', text: 'Behind the scenes, the engine compresses 1,060 market signals into 85 physics-grade features derived from liquidity and volatility dynamics. You simply connect your broker and let the engine execute the mathematics autonomously.' },
             { icon: <BarChart3 className="w-5 h-5 text-white" />, iconBg: 'bg-emerald-600', title: 'The +2.9% Edge', text: 'A fair coin flip is 50%. Our blind tests hit 52.9% win rates. That 2.9% mathematical edge compounded over time is the secret to institutional wealth, now available to your personal account.' },
-            { icon: <ShieldCheck className="w-5 h-5 text-white" />, iconBg: 'bg-slate-900', title: 'Blind-Tested Accuracy', text: 'Our performance is certified mathematically. The core model was frozen before 2025, meaning its 52.9% win rate comes from entirely unseen future data, demonstrating unbiased accuracy you can trust.' },
+            { icon: <Target className="w-5 h-5 text-white" />, iconBg: 'bg-amber-500', title: 'Blind-Tested Accuracy', text: 'Our performance is certified mathematically. The core model was frozen before 2025, meaning its 52.9% win rate comes from entirely unseen future data, demonstrating unbiased accuracy you can trust.' },
           ].map((card, i) => (
             <div key={i} className="rounded-2xl bg-gradient-to-b from-white to-slate-50 border border-slate-200 overflow-hidden">
               <button
@@ -188,26 +188,26 @@ export default function MarketingPage() {
         </div>
       </section>
 
-      {/* 3.5 CRASH SHIELD SECTION */}
+      {/* 3.5 DRAWDOWN PROTECTION SECTION */}
       <section className="py-24 px-6 bg-slate-900 relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.03]">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full border border-emerald-400 animate-ping" style={{ animationDuration: '4s' }}></div>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-emerald-400 animate-ping" style={{ animationDuration: '4s', animationDelay: '1s' }}></div>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full border border-emerald-400 animate-ping" style={{ animationDuration: '4s', animationDelay: '2s' }}></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full border border-amber-400 animate-ping" style={{ animationDuration: '4s' }}></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-amber-400 animate-ping" style={{ animationDuration: '4s', animationDelay: '1s' }}></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full border border-amber-400 animate-ping" style={{ animationDuration: '4s', animationDelay: '2s' }}></div>
         </div>
 
         <div className="max-w-5xl mx-auto relative z-10">
           <div className="text-center space-y-6 mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-xs font-bold font-mono tracking-wider">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-bold font-mono tracking-wider">
               <AlertTriangle className="w-3.5 h-3.5" />
-              CRASH SHIELD INCLUDED FREE
+              DRAWDOWN PROTECTION INCLUDED
             </div>
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white">
-              Sleep through<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-600">market crashes.</span>
+              Stay invested through<br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">every downturn.</span>
             </h2>
             <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-              Every account includes our proprietary Crash Shield — a built-in early warning system that monitors hundreds of risk indicators in real-time and automatically reduces your exposure when danger is elevated. No manual intervention required.
+              Every account includes built-in drawdown protection — the engine monitors hundreds of risk indicators in real-time and automatically reduces your exposure when volatility spikes. No manual intervention required.
             </p>
           </div>
 
@@ -250,9 +250,9 @@ export default function MarketingPage() {
           </div>
 
           <div className="mt-12 text-center">
-            <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-emerald-500/10 border border-emerald-500/20">
-              <ShieldCheck className="w-5 h-5 text-emerald-400" />
-              <span className="text-emerald-400 font-bold text-sm">Included free with every account — no minimum balance required</span>
+            <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-amber-500/10 border border-amber-500/20">
+              <Wallet className="w-5 h-5 text-amber-400" />
+              <span className="text-amber-400 font-bold text-sm">Included free with every account — no minimum balance required</span>
             </div>
           </div>
         </div>
@@ -344,7 +344,7 @@ export default function MarketingPage() {
                  <Lock className="w-3.5 h-3.5" /> Bank-grade encryption
                </div>
                <div className="flex items-center gap-2 text-xs text-slate-400">
-                 <ShieldCheck className="w-3.5 h-3.5" /> Funds never leave your broker
+                 <Wallet className="w-3.5 h-3.5" /> Funds never leave your broker
                </div>
                <div className="flex items-center gap-2 text-xs text-slate-400">
                  <CheckCircle className="w-3.5 h-3.5" /> Cancel anytime, no lock-in
