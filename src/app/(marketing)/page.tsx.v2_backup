@@ -1,0 +1,183 @@
+import Link from 'next/link';
+import { ArrowRight, Lock, Activity, ShieldAlert, Cpu } from 'lucide-react';
+import FAQ from '@/components/FAQ';
+import GrowthCalculator from '@/components/GrowthCalculator';
+
+export default function MarketingPage() {
+  return (
+    <div className="w-full relative bg-black text-slate-100 selection:bg-emerald-500/30 selection:text-emerald-200">
+      
+      {/* 1. THE HERO — Monolith Aesthetic */}
+      <section className="relative min-h-[90vh] flex items-center justify-center pt-20 overflow-hidden">
+        {/* Abstract Topological Grid Background (simulated with CSS) */}
+        <div className="absolute inset-0 opacity-20 pointer-events-none" 
+             style={{
+                 backgroundImage: `linear-gradient(rgba(16, 185, 129, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(16, 185, 129, 0.05) 1px, transparent 1px)`,
+                 backgroundSize: '40px 40px',
+                 transform: 'perspective(1000px) rotateX(60deg) translateY(-100px) translateZ(-200px)',
+             }}
+        />
+        
+        {/* Glowing orb center */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-emerald-900/20 blur-[150px] rounded-full mix-blend-screen pointer-events-none"></div>
+
+        <div className="max-w-7xl mx-auto w-full px-6 flex flex-col items-center text-center z-10">
+          <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-none border border-white/10 bg-white/5 text-slate-300 text-xs font-mono tracking-[0.2em] mb-12 uppercase">
+            <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse"></span>
+            System Online: 128,307 Global Equities Tracking
+          </div>
+          
+          <h1 className="text-6xl md:text-8xl lg:text-[110px] font-black tracking-tighter text-white leading-[0.9] mb-8 mix-blend-difference">
+            ALPHA <br className="md:hidden" />IS A <br className="hidden md:block"/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-slate-500">LAW.</span>
+          </h1>
+          
+          <p className="text-xl md:text-2xl text-slate-400 font-light max-w-2xl mt-4 mb-16 tracking-wide">
+             We extract pure directional signal from global market noise. Connected directly to your brokerage.
+          </p>
+          
+          <Link href="/signup" className="group relative px-10 py-5 bg-white text-black font-bold uppercase tracking-widest text-sm hover:bg-slate-200 transition-all flex items-center gap-4">
+            Initialize Access <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </div>
+      </section>
+
+      {/* 2. THE SCALE (Brute-Force Flex) */}
+      <section className="py-24 border-y border-white/5 bg-black relative">
+        <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-8 divide-y md:divide-y-0 md:divide-x divide-white/10 text-center">
+            <div className="pt-8 md:pt-0">
+                <div className="text-5xl md:text-7xl font-bold font-mono text-emerald-500 mb-4 tracking-tighter">700M+</div>
+                <div className="text-xs uppercase tracking-widest text-slate-500 font-bold">Historical Market States Mapped</div>
+            </div>
+            <div className="pt-8 md:pt-0">
+                <div className="text-5xl md:text-7xl font-bold font-mono text-emerald-500 mb-4 tracking-tighter">1,326</div>
+                <div className="text-xs uppercase tracking-widest text-slate-500 font-bold">Distinct Topological Observables</div>
+            </div>
+            <div className="pt-8 md:pt-0">
+                <div className="text-5xl md:text-7xl font-bold font-mono text-emerald-500 mb-4 tracking-tighter">0.903</div>
+                <div className="text-xs uppercase tracking-widest text-slate-500 font-bold">OOS Baseline Sharpe Ratio</div>
+            </div>
+        </div>
+      </section>
+
+      {/* 3. TERMINAL EXHAUST (Show, Don't Tell) */}
+      <section className="py-32 px-6 relative">
+          <div className="absolute left-0 top-0 w-full h-[1px] bg-gradient-to-r from-transparent via-emerald-900/50 to-transparent"></div>
+          <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-16 items-center">
+              
+              <div className="flex-1 space-y-8">
+                  <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight">
+                    The engine silently calculates.<br/> You capture the return.
+                  </h2>
+                  <p className="text-slate-400 text-lg font-light leading-relaxed">
+                    Unlike traditional statistical arbitrage that collapses when volatility spikes, our topology is regime-invariant. The engine computes structural anomalies and executes via your broker automatically. 
+                  </p>
+                  <p className="text-slate-400 text-lg font-light leading-relaxed">
+                    No settings. No manual intervention. Pure execution.
+                  </p>
+              </div>
+
+              {/* Black Box Terminal Visual */}
+              <div className="flex-1 w-full max-w-lg">
+                  <div className="bg-[#0a0a0a] border border-white/10 rounded-lg p-6 font-mono text-[11px] md:text-xs text-emerald-400/70 shadow-2xl shadow-emerald-900/20 relative overflow-hidden">
+                      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-emerald-500/50 to-transparent"></div>
+                      
+                      <div className="flex items-center justify-between mb-6 pb-4 border-b border-white/5 opacity-50">
+                          <span>SYSTEM_STREAM: LIVE</span>
+                          <span>LATENCY: 14ms</span>
+                      </div>
+                      
+                      <div className="space-y-4">
+                          <div className="flex justify-between items-start">
+                              <div><span className="text-emerald-500 font-bold">[DETECT]</span> Ticker: MSFT</div>
+                              <div className="text-right">State: ANOMALY<br/>Eigen: 0.841</div>
+                          </div>
+                          <div className="w-full h-[1px] bg-white/5"></div>
+                          
+                          <div className="flex justify-between items-start opacity-70">
+                              <div><span className="text-emerald-500 font-bold">[ACTION]</span> ALLOCATE: LONG</div>
+                              <div className="text-right">Conf: 94.2%<br/>Exec: BROKER_API</div>
+                          </div>
+                          <div className="w-full h-[1px] bg-white/5"></div>
+                          
+                          <div className="flex justify-between items-start opacity-50 transition-all">
+                              <div><span className="text-rose-500 font-bold">[WARN]</span> Ticker: AMZN</div>
+                              <div className="text-right">State: DECAY<br/>Eigen: 0.112</div>
+                          </div>
+                          <div className="w-full h-[1px] bg-white/5"></div>
+                          
+                          <div className="flex justify-between items-start opacity-30">
+                              <div><span className="text-slate-500 font-bold">[ACTION]</span> HEDGE INITIATED</div>
+                              <div className="text-right">Conf: 88.1%<br/>Exec: BROKER_API</div>
+                          </div>
+                      </div>
+                      
+                      {/* Animated scan line overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-emerald-500/5 to-transparent w-full h-[50px] animate-[scan_3s_linear_infinite] pointer-events-none"></div>
+                  </div>
+              </div>
+          </div>
+      </section>
+
+
+      {/* 4. PRICING AESTHETIC REWRITE */}
+      <section className="py-32 px-6 bg-[#050505] border-t border-white/5">
+         <div className="max-w-4xl mx-auto text-center">
+             <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-none border border-white/10 bg-white/5 text-slate-300 text-xs font-mono tracking-[0.2em] mb-12 uppercase">
+                Access Tiers
+             </div>
+             
+             <h2 className="text-4xl md:text-6xl font-black text-white mb-16 tracking-tighter">Scale Without Friction.</h2>
+
+             <div className="grid md:grid-cols-2 gap-1 items-stretch bg-white/10 border border-white/10 rounded-xl overflow-hidden text-left">
+                 
+                 {/* Free Tier */}
+                 <div className="bg-[#0a0a0a] p-10 flex flex-col justify-between">
+                     <div>
+                         <h3 className="text-xl font-bold text-white mb-2 uppercase tracking-wide">Base Tier</h3>
+                         <p className="text-sm border-b border-white/10 pb-6 mb-6 text-slate-500">For accounts up to $10,000</p>
+                         <div className="text-5xl font-black text-emerald-500 mb-8">$0<span className="text-sm text-slate-600 font-normal"> /mo</span></div>
+                         
+                         <ul className="space-y-4 mb-auto text-sm text-slate-400">
+                             <li className="flex items-center gap-3"><ArrowRight className="w-4 h-4 text-emerald-500"/> Full engine access</li>
+                             <li className="flex items-center gap-3"><ArrowRight className="w-4 h-4 text-emerald-500"/> Automated executions</li>
+                             <li className="flex items-center gap-3"><ArrowRight className="w-4 h-4 text-emerald-500"/> Paper trading allowed</li>
+                         </ul>
+                     </div>
+                 </div>
+
+                 {/* Premium Tier */}
+                 <div className="bg-[#111] p-10 flex flex-col justify-between relative overflow-hidden">
+                     <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 blur-[50px]"></div>
+                     <div>
+                         <h3 className="text-xl font-bold text-white mb-2 uppercase tracking-wide">Institutional Scaling</h3>
+                         <p className="text-sm border-b border-white/10 pb-6 mb-6 text-slate-500">$10,000 — $25,000 Portfolios</p>
+                         <div className="text-5xl font-black text-white mb-8">$99<span className="text-sm text-slate-600 font-normal"> /mo</span></div>
+                         
+                         <ul className="space-y-4 mb-auto text-sm text-slate-400">
+                             <li className="flex items-center gap-3"><Cpu className="w-4 h-4 text-emerald-500"/> Priority signal routing</li>
+                             <li className="flex items-center gap-3"><ShieldAlert className="w-4 h-4 text-emerald-500"/> Crash Shield enabled</li>
+                             <li className="text-emerald-500/80 pt-4 text-xs font-mono">
+                                 + $99 per additional $10k tranche.<br/> Wait 60 days before billing on growth.
+                             </li>
+                         </ul>
+                     </div>
+                 </div>
+
+             </div>
+
+             <div className="mt-16">
+                 <Link href="/signup" className="inline-block px-12 py-5 bg-emerald-600 text-white font-bold uppercase tracking-widest text-sm hover:bg-emerald-500 transition-all rounded-none">
+                    Acquire Signal
+                 </Link>
+                 <div className="mt-6 flex justify-center items-center gap-6 text-xs text-slate-600 font-mono tracking-widest uppercase">
+                     <span><Lock className="w-3 pos-relative inline mr-2 -mt-1"/> Bank-grade</span>
+                     <span>Non-custodial</span>
+                 </div>
+             </div>
+         </div>
+      </section>
+
+    </div>
+  );
+}
