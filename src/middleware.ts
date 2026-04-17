@@ -7,7 +7,7 @@ export async function middleware(request: NextRequest) {
     });
 
     // Determine target URL for redirects
-    const PUBLIC_PATHS = ['/login', '/signup', '/auth/callback', '/', '/terms'];
+    const PUBLIC_PATHS = ['/login', '/signup', '/auth/callback', '/', '/terms', '/privacy', '/risk', '/contact'];
     const isPublic = PUBLIC_PATHS.some(p => request.nextUrl.pathname === p || request.nextUrl.pathname.startsWith('/auth/')) || request.nextUrl.pathname.startsWith('/dashboard');
 
     // Provide placeholder URL string to bypass type errors during build if .env is missing locally

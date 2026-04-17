@@ -55,7 +55,7 @@ export default function MarketingPage() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
             </span>
-            RETINA Q1R5 MODEL ENGINE LIVE
+            RETINA V1.0 ENGINE LIVE
           </div>
           
           <h1 className="mt-10 text-5xl md:text-7xl lg:text-8xl font-extrabold text-white tracking-tight leading-[1.05]">
@@ -351,6 +351,43 @@ export default function MarketingPage() {
                </div>
              </div>
          </div>
+      </section>
+
+      {/* 7. EMAIL CAPTURE — Final Soft CTA */}
+      <section className="py-20 px-6 bg-slate-900 border-t border-slate-800">
+        <div className="max-w-2xl mx-auto text-center">
+          <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">Not ready yet? Stay in the loop.</h3>
+          <p className="text-slate-400 text-sm mb-8">Get notified when new features drop and receive occasional market insights from the engine. No spam, ever.</p>
+          
+          <form 
+            onSubmit={(e) => {
+              e.preventDefault();
+              const form = e.target as HTMLFormElement;
+              const email = (form.elements.namedItem('email') as HTMLInputElement).value;
+              if (email) {
+                alert('Thanks! We\'ll be in touch.');
+                form.reset();
+              }
+            }}
+            className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
+          >
+            <input 
+              type="email" 
+              name="email"
+              required
+              placeholder="your@email.com" 
+              className="flex-1 px-5 py-3.5 rounded-xl bg-white/10 border border-white/10 text-white placeholder:text-slate-500 text-sm focus:outline-none focus:border-emerald-500/50 focus:ring-1 focus:ring-emerald-500/30 transition-all"
+            />
+            <button 
+              type="submit"
+              className="px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm transition-all shadow-lg shadow-emerald-600/20 hover:shadow-emerald-500/30 whitespace-nowrap"
+            >
+              Notify Me
+            </button>
+          </form>
+          
+          <p className="text-[11px] text-slate-600 mt-4">Unsubscribe anytime. We respect your inbox.</p>
+        </div>
       </section>
 
     </div>
