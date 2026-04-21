@@ -49,8 +49,18 @@ function generateTrade() {
   };
 }
 
+type Trade = {
+  id: string;
+  time: string;
+  action: string;
+  asset: string;
+  confidence: number;
+  hash: string;
+  isShield: boolean;
+};
+
 export default function LivePaperTrades() {
-  const [trades, setTrades] = useState<any[]>([]);
+  const [trades, setTrades] = useState<Trade[]>([]);
   const [balance, setBalance] = useState<number>(10000); // Default to prevent Hydration mismatch
   const [mounted, setMounted] = useState(false);
 
