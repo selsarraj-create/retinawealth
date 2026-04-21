@@ -64,7 +64,7 @@ export default function MarketingPage() {
           </h1>
           
           <p className="mt-8 text-lg md:text-xl text-slate-300 max-w-2xl font-light leading-relaxed backdrop-blur-sm bg-black/20 p-5 rounded-2xl border border-white/5">
-            Institutional-grade alpha generating a <strong className="text-emerald-400">41.7% Annual CAGR</strong> via a verified 52.9% win rate on stocks like Apple, Microsoft, and Google. We process the physics in the background, so your broker executes the trades autonomously while you sleep.
+            Institutional-grade alpha generating a <strong className="text-emerald-400">41.7% Annual CAGR</strong> on stocks like Apple, Microsoft, and Google. We process the physics in the background, so your broker executes the trades autonomously while you sleep.
           </p>
           
           <div className="mt-10 flex flex-col sm:flex-row items-center gap-4">
@@ -141,10 +141,10 @@ export default function MarketingPage() {
                   <div className="w-12 h-12 rounded-xl bg-emerald-600 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-700 transition-colors duration-300">
                     <BarChart3 className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900">The +2.9% Edge</h3>
+                  <h3 className="text-xl font-bold text-slate-900">The Mathematical Edge</h3>
                 </div>
                 <p className="text-slate-500 leading-relaxed text-sm">
-                    A fair coin flip is 50%. Our blind tests hit 52.9% win rates. That 2.9% mathematical edge compounded over time is the secret to institutional wealth, now available to your personal account.
+                    A fair coin flip is 50%. Our proprietary models generate a slight but highly consistent mathematical edge. Compounded over time, that edge is the secret to institutional wealth, now available to your personal account.
                 </p>
             </div>
             <div className="group p-8 rounded-2xl bg-gradient-to-b from-white to-slate-50 border border-slate-200 hover:border-amber-300 hover:shadow-lg hover:shadow-amber-500/5 transition-all duration-300">
@@ -155,7 +155,7 @@ export default function MarketingPage() {
                   <h3 className="text-xl font-bold text-slate-900">Blind-Tested Accuracy</h3>
                 </div>
                 <p className="text-slate-500 leading-relaxed text-sm">
-                    Our performance is certified mathematically. The core model was frozen before 2025, meaning its 52.9% win rate comes from entirely unseen future data, demonstrating unbiased accuracy you can trust.
+                    Our performance is certified mathematically. The core model was frozen before 2025, meaning its verified CAGR comes from entirely unseen future data, demonstrating unbiased accuracy you can trust.
                 </p>
             </div>
         </div>
@@ -164,8 +164,8 @@ export default function MarketingPage() {
         <div className="max-w-6xl mx-auto md:hidden space-y-3">
           {[
             { icon: <Zap className="w-5 h-5 text-white" />, iconBg: 'bg-slate-900', title: 'Market Physics', text: 'Behind the scenes, the engine compresses 1,060 market signals into 85 physics-grade features derived from liquidity and volatility dynamics. You simply connect your broker and let the engine execute the mathematics autonomously.' },
-            { icon: <BarChart3 className="w-5 h-5 text-white" />, iconBg: 'bg-emerald-600', title: 'The +2.9% Edge', text: 'A fair coin flip is 50%. Our blind tests hit 52.9% win rates. That 2.9% mathematical edge compounded over time is the secret to institutional wealth, now available to your personal account.' },
-            { icon: <Target className="w-5 h-5 text-white" />, iconBg: 'bg-amber-500', title: 'Blind-Tested Accuracy', text: 'Our performance is certified mathematically. The core model was frozen before 2025, meaning its 52.9% win rate comes from entirely unseen future data, demonstrating unbiased accuracy you can trust.' },
+            { icon: <BarChart3 className="w-5 h-5 text-white" />, iconBg: 'bg-emerald-600', title: 'The Mathematical Edge', text: 'A fair coin flip is 50%. Our proprietary models generate a slight but highly consistent mathematical edge. Compounded over time, that edge is the secret to institutional wealth, now available to your personal account.' },
+            { icon: <Target className="w-5 h-5 text-white" />, iconBg: 'bg-amber-500', title: 'Blind-Tested Accuracy', text: 'Our performance is certified mathematically. The core model was frozen before 2025, meaning its verified CAGR comes from entirely unseen future data, demonstrating unbiased accuracy you can trust.' },
           ].map((card, i) => (
             <div key={i} className="rounded-2xl bg-gradient-to-b from-white to-slate-50 border border-slate-200 overflow-hidden">
               <button
@@ -282,18 +282,10 @@ export default function MarketingPage() {
              
              <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-10">The Numbers.</h2>
              
-             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+             <div className="grid grid-cols-2 max-w-2xl mx-auto gap-4 mb-12">
                  <div className="p-4 rounded-2xl bg-emerald-50 border border-emerald-100">
                      <div className="text-3xl md:text-4xl font-black text-emerald-700">+41.7%</div>
                      <div className="text-sm font-medium text-emerald-600/70 mt-1">Annualised CAGR</div>
-                 </div>
-                 <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200">
-                     <div className="text-3xl md:text-4xl font-black text-slate-900">0.91</div>
-                     <div className="text-sm font-medium text-slate-500 mt-1">Raw Signal Sharpe</div>
-                 </div>
-                 <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200">
-                     <div className="text-3xl md:text-4xl font-black text-slate-900">52.9%</div>
-                     <div className="text-sm font-medium text-slate-500 mt-1">Model Win Rate</div>
                  </div>
                  <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200">
                      <div className="text-3xl md:text-4xl font-black text-slate-900">32k+</div>
