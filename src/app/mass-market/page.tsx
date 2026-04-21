@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Shield, Lock, TrendingUp, Actvity, ChevronRight, Check } from 'lucide-react';
+import { Shield, Lock, TrendingUp, Activity, ChevronRight, Check } from 'lucide-react';
 
 export default function MassMarketPage() {
   return (
