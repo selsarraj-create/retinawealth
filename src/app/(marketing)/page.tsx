@@ -44,40 +44,44 @@ export default function MarketingPage() {
     <div className="w-full relative">
 
       {/* 1. HERO SECTION — Dark Animated Mesh */}
-      <section className="relative min-h-[95vh] flex items-center justify-center overflow-hidden bg-[#020610]">
+      <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-[#020610] min-h-[95vh] flex flex-col justify-start lg:justify-center">
         
         {/* The animated topological mesh canvas */}
         <TopologicalMesh />
         
-        <div className="relative z-20 max-w-6xl mx-auto flex flex-col items-center text-center px-6">
+        <div className="relative z-20 max-w-7xl mx-auto w-full px-6 flex flex-col lg:flex-row items-center gap-16 lg:gap-8">
           
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-bold font-mono backdrop-blur-md shadow-[0_0_15px_rgba(245,158,11,0.1)]">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-400"></span>
-            </span>
-            RETINA V1.0 ENGINE LIVE
-          </div>
-          
-          <h1 className="mt-10 text-5xl md:text-7xl lg:text-8xl font-extrabold text-white tracking-tight leading-[1.05]">
-            Institutional alpha.<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-600">Now in your brokerage.</span>
-          </h1>
-          
-          <p className="mt-8 text-lg md:text-xl text-slate-300 max-w-2xl font-light leading-relaxed backdrop-blur-sm bg-black/20 p-5 rounded-2xl border border-white/5">
-            Institutional-grade alpha generating a <strong className="text-emerald-400">41.7% Annual CAGR</strong> on stocks like Apple, Microsoft, and Google. We process the physics in the background, so your broker executes the trades autonomously while you sleep.
-          </p>
-          
-          <div className="mt-10 flex flex-col sm:flex-row items-center gap-4">
-            <Link href="/signup" className="w-full sm:w-auto px-8 py-4 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-lg transition-all shadow-lg shadow-emerald-600/30 flex items-center justify-center gap-2 hover:shadow-emerald-500/50 hover:scale-[1.02] active:scale-[0.98]">
-              Get Early Access <TrendingUp className="w-5 h-5" />
-            </Link>
-            <div className="text-sm text-slate-400 font-medium">
-              Free paper trading with live signals. No card required.
+          <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-bold font-mono backdrop-blur-md shadow-[0_0_15px_rgba(245,158,11,0.1)]">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-400"></span>
+              </span>
+              RETINA V1.0 ENGINE LIVE
+            </div>
+            
+            <h1 className="mt-8 text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-white tracking-tight leading-[1.05]">
+              Institutional alpha.<br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-600">Now in your brokerage.</span>
+            </h1>
+            
+            <p className="mt-6 text-base md:text-lg lg:text-xl text-slate-300 max-w-xl font-light leading-relaxed backdrop-blur-sm bg-black/20 p-5 rounded-2xl border border-white/5 mx-auto lg:mx-0">
+              Institutional-grade alpha generating a <strong className="text-emerald-400">41.7% Annual CAGR</strong> on stocks like Apple, Microsoft, and Google. We process the physics in the background, so your broker executes the trades autonomously while you sleep.
+            </p>
+            
+            <div className="mt-10 flex flex-col sm:flex-row items-center lg:items-start gap-4">
+              <Link href="/signup" className="w-full sm:w-auto px-8 py-4 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-lg transition-all shadow-lg shadow-emerald-600/30 flex items-center justify-center gap-2 hover:shadow-emerald-500/50 hover:scale-[1.02] active:scale-[0.98]">
+                Get Early Access <TrendingUp className="w-5 h-5" />
+              </Link>
+              <div className="text-sm text-slate-400 font-medium sm:mt-4 lg:mt-4">
+                Free paper trading. No card required.
+              </div>
             </div>
           </div>
           
-          <LivePaperTrades />
+          <div className="flex-1 w-full flex justify-center lg:justify-end max-w-lg lg:max-w-none mx-auto">
+             <LivePaperTrades />
+          </div>
         </div>
       </section>
 
