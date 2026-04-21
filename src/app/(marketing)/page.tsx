@@ -6,6 +6,7 @@ import { Zap, TrendingUp, CheckCircle, Lock, BarChart3, AlertTriangle, Activity,
 import FAQ from '@/components/FAQ';
 import GrowthCalculator from '@/components/GrowthCalculator';
 import TopologicalMesh from '@/components/TopologicalMesh';
+import LivePaperTrades from '@/components/LivePaperTrades';
 
 const socialProof = [
   "Out-of-Sample Verified",
@@ -75,6 +76,8 @@ export default function MarketingPage() {
               Free paper trading with live signals. No card required.
             </div>
           </div>
+          
+          <LivePaperTrades />
         </div>
       </section>
 
