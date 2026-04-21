@@ -148,7 +148,7 @@ export default function MarketingPage() {
                   <div className="w-12 h-12 rounded-xl bg-emerald-600 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-700 transition-colors duration-300">
                     <BarChart3 className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-xl font-medium tracking-tight text-slate-900">The Mathematical Edge</h3>
+                  <h3 className="text-xl font-medium tracking-tight text-slate-900">Mathematical Edge</h3>
                 </div>
                 <p className="text-slate-500 leading-relaxed text-sm font-light">
                     A fair coin flip is 50%. Our proprietary models generate a slight but highly consistent mathematical edge. Compounded over time, that edge is the secret to institutional wealth, now available to your personal account.
@@ -171,7 +171,7 @@ export default function MarketingPage() {
         <div className="max-w-6xl mx-auto md:hidden space-y-3">
           {[
             { icon: <Zap className="w-5 h-5 text-white" />, iconBg: 'bg-slate-900', title: 'Market Physics', text: 'Behind the scenes, the engine compresses 1,060 market signals into 85 physics-grade features derived from liquidity and volatility dynamics. You simply connect your broker and let the engine execute the mathematics autonomously.' },
-            { icon: <BarChart3 className="w-5 h-5 text-white" />, iconBg: 'bg-emerald-600', title: 'The Mathematical Edge', text: 'A fair coin flip is 50%. Our proprietary models generate a slight but highly consistent mathematical edge. Compounded over time, that edge is the secret to institutional wealth, now available to your personal account.' },
+            { icon: <BarChart3 className="w-5 h-5 text-white" />, iconBg: 'bg-emerald-600', title: 'Mathematical Edge', text: 'A fair coin flip is 50%. Our proprietary models generate a slight but highly consistent mathematical edge. Compounded over time, that edge is the secret to institutional wealth, now available to your personal account.' },
             { icon: <Target className="w-5 h-5 text-white" />, iconBg: 'bg-amber-500', title: 'Blind-Tested Accuracy', text: 'Our performance is certified mathematically. The core model was frozen before 2025, meaning its verified CAGR comes from entirely unseen future data, demonstrating unbiased accuracy you can trust.' },
           ].map((card, i) => (
             <div key={i} className="rounded-2xl bg-gradient-to-b from-white to-slate-50 border border-slate-200 overflow-hidden">
