@@ -52,7 +52,7 @@ export default function MarketingPage() {
         <div className="relative z-20 max-w-7xl mx-auto w-full px-6 flex flex-col lg:flex-row items-center gap-16 lg:gap-8">
           
           <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-bold font-mono backdrop-blur-md shadow-[0_0_15px_rgba(245,158,11,0.1)]">
+            <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-[10px] font-mono tracking-widest uppercase backdrop-blur-md shadow-[0_0_15px_rgba(245,158,11,0.1)]">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-400"></span>
@@ -60,7 +60,7 @@ export default function MarketingPage() {
               RETINA V1.0 ENGINE LIVE
             </div>
             
-            <h1 className="mt-8 text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-white tracking-tight leading-[1.05]">
+            <h1 className="mt-8 text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white tracking-tighter leading-[1.05]">
               Institutional alpha.<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-600">Now in your brokerage.</span>
             </h1>
@@ -69,11 +69,11 @@ export default function MarketingPage() {
               Institutional-grade alpha generating a <strong className="text-emerald-400">41.7% Annual CAGR</strong> on stocks like Apple, Microsoft, and Google. We process the physics in the background, so your broker executes the trades autonomously while you sleep.
             </p>
             
-            <div className="mt-10 flex flex-col sm:flex-row items-center lg:items-start gap-4">
-              <Link href="/signup" className="w-full sm:w-auto px-8 py-4 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-lg transition-all shadow-lg shadow-emerald-600/30 flex items-center justify-center gap-2 hover:shadow-emerald-500/50 hover:scale-[1.02] active:scale-[0.98]">
-                Get Early Access <TrendingUp className="w-5 h-5" />
+            <div className="mt-10 flex flex-col sm:flex-row items-center lg:items-start gap-5 w-full">
+              <Link href="/signup" className="w-full sm:w-auto px-8 py-4 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm tracking-widest uppercase transition-transform shadow-lg shadow-emerald-600/30 flex items-center justify-center gap-2 hover:shadow-emerald-500/50 hover:scale-[1.02] active:scale-[0.98]">
+                Get Early Access <TrendingUp className="w-4 h-4" />
               </Link>
-              <div className="text-sm text-slate-400 font-medium sm:mt-4 lg:mt-4">
+              <div className="text-[11px] uppercase tracking-widest text-slate-400 font-mono sm:mt-5 lg:mt-5">
                 Free paper trading. No card required.
               </div>
             </div>
@@ -89,8 +89,8 @@ export default function MarketingPage() {
       <section className="py-4 px-6 border-y border-white/10 bg-[#020610]">
         <div className="max-w-4xl mx-auto flex flex-wrap justify-center gap-x-8 gap-y-2">
           {socialProof.map((item) => (
-            <div key={item} className="flex items-center gap-2 text-sm text-slate-400 font-medium">
-              <CheckCircle className="w-4 h-4 text-emerald-500 flex-shrink-0" />
+            <div key={item} className="flex items-center gap-2 text-[10px] uppercase tracking-widest font-mono text-slate-400">
+              <span className="w-1.5 h-1.5 bg-emerald-500 block"></span>
               {item}
             </div>
           ))}
@@ -121,12 +121,12 @@ export default function MarketingPage() {
       {/* 3. THE PROOF SECTION */}
       <section id="logic" className="py-24 px-6 md:py-32 bg-white">
         <div className="max-w-4xl mx-auto text-center space-y-6 mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-700 text-xs font-bold font-mono tracking-wider">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-700 text-[10px] font-mono tracking-widest uppercase">
               THE SCIENCE
             </div>
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-slate-900">Physics-Based Alpha.</h2>
-            <p className="text-lg text-slate-500 max-w-2xl mx-auto">
-                <strong className="text-slate-700">You don&apos;t need a PhD to invest like one.</strong> Our core engine handles the proprietary physics computations in the background, translating complex market dynamics into automated, hands-free execution directly in your brokerage account.
+            <h2 className="text-3xl md:text-5xl font-black tracking-tighter text-slate-900">Physics-Based Alpha.</h2>
+            <p className="text-lg text-slate-500 max-w-2xl mx-auto font-light">
+                <strong className="text-slate-700 font-medium">You don&apos;t need a PhD to invest like one.</strong> Our core engine handles the proprietary physics computations in the background, translating complex market dynamics into automated, hands-free execution directly in your brokerage account.
             </p>
         </div>
 
@@ -137,9 +137,9 @@ export default function MarketingPage() {
                   <div className="w-12 h-12 rounded-xl bg-slate-900 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-600 transition-colors duration-300">
                     <Zap className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900">Market Physics</h3>
+                  <h3 className="text-xl font-medium tracking-tight text-slate-900">Market Physics</h3>
                 </div>
-                <p className="text-slate-500 leading-relaxed text-sm">
+                <p className="text-slate-500 leading-relaxed text-sm font-light">
                     Behind the scenes, the engine compresses 1,060 market signals into 85 physics-grade features derived from liquidity and volatility dynamics. You simply connect your broker and let the engine execute the mathematics autonomously.
                 </p>
             </div>
@@ -148,9 +148,9 @@ export default function MarketingPage() {
                   <div className="w-12 h-12 rounded-xl bg-emerald-600 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-700 transition-colors duration-300">
                     <BarChart3 className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900">The Mathematical Edge</h3>
+                  <h3 className="text-xl font-medium tracking-tight text-slate-900">The Mathematical Edge</h3>
                 </div>
-                <p className="text-slate-500 leading-relaxed text-sm">
+                <p className="text-slate-500 leading-relaxed text-sm font-light">
                     A fair coin flip is 50%. Our proprietary models generate a slight but highly consistent mathematical edge. Compounded over time, that edge is the secret to institutional wealth, now available to your personal account.
                 </p>
             </div>
@@ -159,9 +159,9 @@ export default function MarketingPage() {
                   <div className="w-12 h-12 rounded-xl bg-amber-500 flex items-center justify-center flex-shrink-0 group-hover:bg-amber-600 transition-colors duration-300">
                     <Target className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900">Blind-Tested Accuracy</h3>
+                  <h3 className="text-xl font-medium tracking-tight text-slate-900">Blind-Tested Accuracy</h3>
                 </div>
-                <p className="text-slate-500 leading-relaxed text-sm">
+                <p className="text-slate-500 leading-relaxed text-sm font-light">
                     Our performance is certified mathematically. The core model was frozen before 2025, meaning its verified CAGR comes from entirely unseen future data, demonstrating unbiased accuracy you can trust.
                 </p>
             </div>
@@ -205,15 +205,15 @@ export default function MarketingPage() {
 
         <div className="max-w-5xl mx-auto relative z-10">
           <div className="text-center space-y-6 mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-bold font-mono tracking-wider">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-[10px] uppercase tracking-widest font-mono">
               <AlertTriangle className="w-3.5 h-3.5" />
               DRAWDOWN PROTECTION INCLUDED
             </div>
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white">
+            <h2 className="text-3xl md:text-5xl font-black tracking-tighter text-white">
               Stay invested through<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">every downturn.</span>
             </h2>
-            <p className="text-lg text-slate-400 max-w-2xl mx-auto">
+            <p className="text-lg text-slate-400 max-w-2xl mx-auto font-light">
               Every account includes built-in drawdown protection — the engine monitors hundreds of risk indicators in real-time and automatically reduces your exposure when volatility spikes. No manual intervention required.
             </p>
           </div>
@@ -271,11 +271,11 @@ export default function MarketingPage() {
       {/* 5. FAQ SECTION */}
       <section id="faq" className="py-24 px-6 bg-slate-50 border-t border-slate-200">
         <div className="max-w-4xl mx-auto text-center space-y-4 mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-600 text-xs font-bold font-mono tracking-wider">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-600 text-[10px] tracking-widest uppercase font-mono">
               HOW IT WORKS
             </div>
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-slate-900">Hands-Free Wealth Generation.</h2>
-            <p className="text-lg text-slate-500 max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-5xl font-black tracking-tighter text-slate-900">Hands-Free Wealth Generation.</h2>
+            <p className="text-lg text-slate-500 max-w-2xl mx-auto font-light">
                 No trading experience required. Here is exactly how our automated architecture works.
             </p>
         </div>
@@ -287,22 +287,22 @@ export default function MarketingPage() {
          <div className="max-w-5xl mx-auto bg-gradient-to-b from-slate-50 to-white border border-slate-200 rounded-3xl p-8 md:p-16 text-center shadow-xl relative overflow-hidden">
              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-1 bg-gradient-to-r from-transparent via-emerald-500 to-transparent opacity-60"></div>
              
-             <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-10">The Numbers.</h2>
+             <h2 className="text-3xl md:text-5xl font-black tracking-tighter text-slate-900 mb-10">The Numbers.</h2>
              
              <div className="grid grid-cols-2 max-w-2xl mx-auto gap-4 mb-12">
                  <div className="p-4 rounded-2xl bg-emerald-50 border border-emerald-100">
-                     <div className="text-3xl md:text-4xl font-black text-emerald-700">+41.7%</div>
-                     <div className="text-sm font-medium text-emerald-600/70 mt-1">Annualised CAGR</div>
+                     <div className="text-3xl md:text-4xl font-black text-emerald-700 tracking-tighter">+41.7%</div>
+                     <div className="text-[10px] font-mono tracking-widest uppercase text-emerald-600 mt-1">Annualised CAGR</div>
                  </div>
                  <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200">
-                     <div className="text-3xl md:text-4xl font-black text-slate-900">32k+</div>
-                     <div className="text-sm font-medium text-slate-500 mt-1">Verified Trades</div>
+                     <div className="text-3xl md:text-4xl font-black text-slate-900 tracking-tighter">32k+</div>
+                     <div className="text-[10px] font-mono tracking-widest uppercase text-slate-500 mt-1">Verified Trades</div>
                  </div>
              </div>
 
              <div className="bg-white border border-slate-200 p-8 rounded-2xl max-w-lg mx-auto shadow-sm">
-                 <h3 className="text-2xl font-bold text-slate-900 mb-2">Fair-Share Pricing</h3>
-                 <p className="text-slate-500 mb-6 text-sm">We only win when you grow. Start trading with institutional physics completely free. Upgrade only when your portfolio scales.</p>
+                 <h3 className="text-2xl font-bold tracking-tight text-slate-900 mb-2">Fair-Share Pricing</h3>
+                 <p className="text-slate-500 mb-6 text-sm font-light">We only win when you grow. Start trading with institutional physics completely free. Upgrade only when your portfolio scales.</p>
 
                  <div className="flex items-center gap-2 px-4 py-2.5 mb-6 rounded-xl bg-emerald-50 border border-emerald-100">
                    <Zap className="w-4 h-4 text-emerald-500 flex-shrink-0" />
@@ -355,8 +355,8 @@ export default function MarketingPage() {
       {/* 7. EMAIL CAPTURE — Final Soft CTA */}
       <section className="py-20 px-6 bg-slate-900 border-t border-slate-800">
         <div className="max-w-2xl mx-auto text-center">
-          <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">Not ready yet? Stay in the loop.</h3>
-          <p className="text-slate-400 text-sm mb-8">Get notified when new features drop and receive occasional market insights from the engine. No spam, ever.</p>
+          <h3 className="text-2xl md:text-3xl font-bold tracking-tight text-white mb-3">Not ready yet? Stay in the loop.</h3>
+          <p className="text-slate-400 text-sm font-light mb-8">Get notified when new features drop and receive occasional market insights from the engine. No spam, ever.</p>
           
           <form 
             onSubmit={(e) => {
