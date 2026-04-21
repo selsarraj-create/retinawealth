@@ -1,21 +1,9 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { Activity, ShieldAlert, TrendingUp, TrendingDown } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
+import { Activity, ShieldAlert, TrendingUp, TrendingDown, Calendar } from 'lucide-react';
 
 const ASSETS = ['AAPL', 'MSFT', 'GOOGL', 'NVDA', 'TSLA', 'AMZN', 'META', 'BTC', 'ETH'];
-const ACTIONS = ['LONG EXECUTED', 'SHORT EXECUTED', 'TAKE PROFIT', 'SHIELD: CASH', 'SHIELD: BONDS'];
-
-const LAUNCH_DATE = new Date('2025-01-01T00:00:00Z');
-const INITIAL_BALANCE = 10000;
-const ANNUAL_CAGR = 0.417;
-
-function getCurrentExpectedBalance() {
-  const now = new Date();
-  const daysSinceLaunch = (now.getTime() - LAUNCH_DATE.getTime()) / (1000 * 60 * 60 * 24);
-  const dailyRate = Math.pow(1 + ANNUAL_CAGR, 1 / 365) - 1;
-  return INITIAL_BALANCE * Math.pow(1 + dailyRate, daysSinceLaunch);
-}
 
 function generateRandomHash() {
   const chars = '0123456789abcdef';
@@ -26,14 +14,32 @@ function generateRandomHash() {
   return hash;
 }
 
-function generateTrade() {
-  const isShield = Math.random() > 0.85;
-  const action = isShield 
-    ? (Math.random() > 0.5 ? 'SHIELD: CASH' : 'SHIELD: BONDS')
-    : (Math.random() > 0.7 ? 'TAKE PROFIT' : (Math.random() > 0.5 ? 'LONG EXECUTED' : 'SHORT EXECUTED'));
+type Trade = {
+  id: string;
+  time: string;
+  action: string;
+  asset: string;
+  confidence: number;
+  hash: string;
+  isShield: boolean;
+  profitAmount?: number;
+};
+
+function generateTrade(): Trade {
+  const isShield = Math.random() > 0.90;
+  let action = '';
+  
+  if (isShield) {
+      action = 'SHIELD: SAFE HARBOR';
+  } else {
+      const rand = Math.random();
+      if (rand > 0.6) action = 'PROFIT SECURED';
+      else if (rand > 0.3) action = 'BOUGHT';
+      else action = 'SOLD';
+  }
   
   const asset = ASSETS[Math.floor(Math.random() * ASSETS.length)];
-  const confidence = isShield ? 100 : Math.floor(Math.random() * 20 + 80); // 80-99%
+  const confidence = isShield ? 100 : Math.floor(Math.random() * 15 + 85); 
   
   const now = new Date();
   const timeString = `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}:${now.getSeconds().toString().padStart(2, '0')}`;
@@ -45,43 +51,46 @@ function generateTrade() {
     asset: isShield ? '' : asset,
     confidence,
     hash: generateRandomHash(),
-    isShield
+    isShield,
+    profitAmount: action === 'PROFIT SECURED' ? (Math.random() * 18 + 4.5) : undefined
   };
 }
 
-type Trade = {
-  id: string;
-  time: string;
-  action: string;
-  asset: string;
-  confidence: number;
-  hash: string;
-  isShield: boolean;
-};
-
 export default function LivePaperTrades() {
   const [trades, setTrades] = useState<Trade[]>([]);
-  const [balance, setBalance] = useState<number>(10000); // Default to prevent Hydration mismatch
+  const [balance, setBalance] = useState<number>(10000); 
+  const [day, setDay] = useState(1);
+  const tickCount = useRef(0);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
-    setBalance(getCurrentExpectedBalance());
     setTrades([generateTrade(), generateTrade(), generateTrade()]);
 
     const interval = setInterval(() => {
       const newTrade = generateTrade();
+      tickCount.current += 1;
+      
+      // Simulate days passing
+      if (tickCount.current % 6 === 0) {
+          setDay(d => d + 1);
+      }
       
       // Simulate real-time compounding visual tick up
-      if (newTrade.action === 'TAKE PROFIT') {
-         setBalance(prev => prev + (Math.random() * 5 + 1.25)); // Visual bump
+      if (newTrade.profitAmount) {
+         setBalance(prev => prev + newTrade.profitAmount!); 
       }
 
-      setTrades(prev => [newTrade, ...prev].slice(0, 4)); // Keep 4 to fit the new taller header
-    }, 4500);
+      setTrades(prev => [newTrade, ...prev].slice(0, 4)); 
+    }, ircTimer());
 
     return () => clearInterval(interval);
   }, []);
+
+  // Vary timer slightly for realism
+  function ircTimer() {
+      return Math.floor(Math.random() * 1500) + 2500; // 2.5s to 4s
+  }
 
   return (
     <div className="flex-1 w-full max-w-lg relative lg:mr-4 ml-auto">
@@ -104,14 +113,17 @@ export default function LivePaperTrades() {
             </div>
           </div>
           
-          <div className="bg-black/30 rounded-xl p-4 border border-white/5 relative overflow-hidden">
+          <div className="bg-black/30 rounded-xl p-4 border border-white/5 relative overflow-hidden flex flex-col sm:flex-row sm:items-end justify-between gap-2">
             <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 blur-2xl rounded-full translate-x-10 -translate-y-10"></div>
-            <div className="text-xs font-medium text-slate-400 mb-1 tracking-wider uppercase relative z-10">Simulated Cumulative Balance</div>
-            <div className="text-3xl font-black text-white font-mono tracking-tight relative z-10">
-              ${mounted ? balance.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : '10,000.00'}
+            <div className="relative z-10">
+                <div className="text-xs font-medium text-slate-400 mb-1 tracking-wider uppercase">Your Potential Balance</div>
+                <div className="text-3xl font-black text-white font-mono tracking-tight">
+                ${mounted ? balance.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : '10,000.00'}
+                </div>
             </div>
-            <div className="text-[10px] text-emerald-400 mt-1 font-mono flex items-center gap-1 relative z-10">
-                <TrendingUp className="w-3 h-3" /> Based on 41.7% CAGR from Jan 1, 2025
+            <div className="relative z-10 bg-emerald-500/10 border border-emerald-500/20 rounded-lg px-3 py-1.5 flex items-center gap-2 mb-1">
+                <Calendar className="w-4 h-4 text-emerald-400" />
+                <span className="text-sm font-bold text-emerald-400">Day {day}</span>
             </div>
           </div>
         </div>
@@ -137,18 +149,18 @@ export default function LivePaperTrades() {
                      </span>
                   ) : (
                      <span className={`text-xs font-bold flex items-center gap-1 ${
-                       trade.action.includes('LONG') ? 'text-emerald-400' 
-                       : trade.action.includes('PROFIT') ? 'text-blue-400' 
+                       trade.action.includes('BOUGHT') ? 'text-blue-400' 
+                       : trade.action.includes('PROFIT') ? 'text-emerald-400' 
                        : 'text-rose-400'
                      }`}>
-                       {trade.action.includes('LONG') ? <TrendingUp className="w-3.5 h-3.5" /> : trade.action.includes('PROFIT') ? <Activity className="w-3.5 h-3.5" /> : <TrendingDown className="w-3.5 h-3.5" />} 
+                       {trade.action.includes('BOUGHT') ? <TrendingUp className="w-3.5 h-3.5" /> : trade.action.includes('PROFIT') ? <Activity className="w-3.5 h-3.5" /> : <TrendingDown className="w-3.5 h-3.5" />} 
                        {trade.action} {trade.asset}
                      </span>
                   )}
                 </div>
                 {!trade.isShield && (
-                    <span className="text-[10px] font-mono text-slate-400 bg-slate-800/50 px-2 py-0.5 rounded border border-white/5">
-                        Conf: {trade.confidence}%
+                    <span className="text-[10px] font-mono text-emerald-400/80 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
+                        {trade.profitAmount ? `+$${trade.profitAmount.toFixed(2)}` : `AI Conviction: ${trade.confidence}%`}
                     </span>
                 )}
               </div>
@@ -161,7 +173,7 @@ export default function LivePaperTrades() {
         
         {/* Footer */}
         <div className="px-6 py-4 bg-black/40 border-t border-white/5 flex items-center justify-center">
-            <span className="text-[11px] text-slate-500 font-medium">Cryptographically verifying 32,504+ trades...</span>
+            <span className="text-[11px] text-slate-500 font-medium">Simulating live $10k subscription tier...</span>
         </div>
       </div>
     </div>
